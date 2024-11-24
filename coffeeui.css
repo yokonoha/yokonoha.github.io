@@ -1,0 +1,144 @@
+body 
+{
+    font-family: Arial, sans-serif ;
+    margin: 0;
+    padding: 0;
+    background-color: #EFFFDF;
+    color: #333;
+
+}
+
+header
+{
+    position: relative;
+    overflow: hidden;
+    height: 60%;
+    h3
+    {
+      background-color: #9fdb77;  
+    }
+}
+
+.A
+{
+padding: 20px;
+background-color: aliceblue;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+.title
+{
+    display: flex;
+
+    align-items: center;
+}
+.title h1
+{
+
+    width: 100%;
+    background-color: white;
+}
+
+.B
+{
+padding: 20px;
+background-color:darkseagreen;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+.C
+{
+padding: 20px;
+background-color:bisque;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+.D
+{
+padding: 20px;
+background-color:mediumaquamarine;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+    .E
+{
+padding: 20px;
+background-color:mediumaquamarine;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+    .F
+{
+padding: 20px;
+background-color:teal;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+}
+    .G
+{
+padding: 20px;
+background-color:white;
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+       overflow: hidden;
+}
+.H
+{
+padding: 20px;
+background-color:rgb(248, 152, 152);
+
+border-radius: 15px;
+
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+
+max-width: 900px;
+
+margin: 20px auto;
+       overflow: hidden;
+}
+
+/*CoffeeUI immitation CSS Rev.1*/
+/*©2024 Y.Yokoha All Rights Reserved.*/
+/*This style sheet is licensed under the Y.Yokoha A License.*/

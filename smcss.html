@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>スマホ画像はめ込みフォトブース(21:9版)</title>
+  <meta charset="UTF-8">
+  <link href="caffeine.css" rel="stylesheet"/>
+  <style>
+    .smartphone
+{
+width: 180px;
+height: 420px;
+background-color:#43555e;
+padding: 6px;
+border-radius: 15px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.display
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: black;
+    img
+    {
+width: 100%;
+height: auto;
+border-radius: 10px;
+    }
+}
+.centre-camera-frame
+{
+    position: absolute;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: #43555e;
+    border-radius: 50px;
+
+}
+.centre-camera
+{
+    position: absolute;
+    top: 3px;
+    left: 2.5px;
+    width: 5px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 50px;  
+}
+/*16:9 Smartphone on CSS by Y.Yokoha*/
+
+
+  </style>
+</head>
+<body>
+  <div class="C">
+  <h2>スマホ画像はめ込みフォトブース(21:9版)</h2>
+  <h3>--Experimental--</h3></div>
+  <br><br><br><br>
+  <div class="F">
+  <p>スマートフォンの枠に21:9の画像をはめ込みます。</p>
+  <p>はめ込んだ後はスクリーンショットを撮って、ご自身のホーム画面や製作アプリのアピールにご活用いただけます。</p>
+  <p>ライセンスは横茶横葉Aライセンスです。ブラウザー内部で完結するので、画像がサーバーに送られることはありません。</p>
+  <p>↓はめ込む画像を選択</p>
+  <input type="file" accept="image/*" onchange="dspimg(event)"></div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="smartphone">
+
+<div class="centre-camera-frame"><div class="centre-camera"></div></div>
+<div class="display">
+  <img id="op" src="" alt="ここに画像が入ります">
+</div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<script>
+  function dspimg(event)
+  {
+    const img=document.getElementById("op");
+    img.src=URL.createObjectURL(event.target.files[0]);
+    img.onload=()=>URL.revokeObjectURL(img.src);
+  }
+</script>
+</html>
