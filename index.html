@@ -1,213 +1,56 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="アドレスをお引越しした横茶横葉のサイトです">
-    <title>Re 横茶横葉のサイト The main site of Y.Yokoha (Re)</title>
-    <link href="coffeeui.css" rel="stylesheet"/> 
+    <!--        ########################################################                 -->
+    <!--        RPG View by Yokoha Studio  会話パートのHTML,JS,CSSフル実装                 -->
+    <!--        ########################################################                 -->
+    <!--RPGなんて一切やったことのない製作者がRPGゲーム開発に乗り出そうとして失敗したので        -->
+    <!--コンポーネントにして配布します。RPGが作りたいっていう方のサポートになれば幸いです!      -->
+    <!--肝心のRPG開発は後でまた挑戦するかもです...(しないかも...?)                           -->
+    <!--License:横茶横葉Aライセンス (改変、商用可。ライセンスの既定内でご自由にお使いください)  -->
+    <!--詳細: https://yokonoha.github.io/alicense        詳しい説明は同梱rvsys.jsへ        -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="アドレスをお引越しした横茶横葉のサイトです">
+  <title>Re 横茶横葉のサイト The main site of Y.Yokoha (Re)</title>
+  <meta charset="UTF-8">
+  <link href="./rpv.css" rel="stylesheet">
 </head>
-    <!--依存関係(時刻表示)-->
-    <script src = "./timenow.js"></script>
-<!--ここから下がCSS(複数あると個人的に管理に困るので単一ファイルにしました)-->
 <style>
-
-
-  /*C#に慣れているのでC#風に入力させてくださいね!*/
-/*全体テーマ色指定(本文)*/
-
-/*ここからsection1(ヘッダー)*/
-header
-{
-    position: relative;
-    overflow: hidden;
-    height: 60%;
-    h3
-    {
-      background-color: #9fdb77;  
-    }
-}
-.carouselkari
-{
-    width: 100%;
-    height: 60%;
-    position: relative;
-}
-.carouselimgs
-{
+  #choices {
     display: flex;
-    width: 100%;
-    height: 60%;
-    animation: carouselmove 10s infinite;
-}
-.imgcontainer
-{
-    /*一枚づつズーム表示*/
-    width: 100%;
-    height: 60%;
-    flex-shrink: 0;
-}
-.imgcontainer img
-    {
-        width: 100%;
-        height: 60%;
-        object-fit: cover;
-    }
-
-@keyframes
-carouselmove
-{
-    /*3枚分の画像アニメーション*/
-    0%{transform: translateX(0%);}
-    33%{transform:translateX(-100%);}
-    66%{transform: translateX(-200%);}
-    100%{transform: translateX(0%);}
-}
-.timenow
-{
-    /*固定的表示にセット*/
+    flex-direction: column;
+    gap: 10px;
     position: absolute;
-    /*上から10px分下へ、右端から10px分左へ移動した位置に固定的表示*/
-    top: 10px;
-    right:10px;
-    color:white;
-    font-size: 1.4em;
-    background-color: #000000;
-    /*5px分丸角表示(card)*/
-    border-radius: 5px;
-    /*文字を上下5px,左右10px隙間を開けておきます*/
-    padding: 5px 10px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/*ここまでsection1*/
-/*ここからsection2*/
 
-    .carouselkari2
-{
-    width: 100%;
-    height: 80%;
-    position: relative;
-    overflow: hidden;
-}
 </style>
 <body>
-    <header>
-        <div class="A">
-            <div class="title">
-                 <img src="trademark.png" width="15%" height="15%">
-                 <h1>横茶横葉のサイト</h1> 
-            </div>
-       </div>
-<h3>Latest News! - 最新情報一覧/(調整中...)</h3>
-<p>サイト更新と復旧作業は1/1 0:00頃(時間は変更になる場合があります)の完了を予定しています。</p><!--
-        <div class="caroucelkari">
 
-            <div class="carouselimgs">
-            <div class="imgcontainer"><img src="1.png" alt="ヘッダーカールセル画像" height="60%"></div>
-            <div class="imgcontainer"><a href="https://yokochayokoha.github.io/anzu"><img src="anzu_banner.png" alt="ヘッダーカールセル画像" height="60%"></a></div>
-            <div class="imgcontainer"><img src="c181p.png" alt="ヘッダーカールセル画像" height="60%"></div> 
-            </div>
-            <h3><font color="#9fdb77">更新2024/8/31</font></h3>
-        </div>-->
-        <div class="timenow" id="Clockvalue"></div>
-        <!--ここまでsection1-->
-</header>
-<!--ここからsection2-->
-    <main>
+  <!--必要なもの/Prerequisites for RPG View by Yokoha-->
+  <div class="bk" id="bk"></div>
+  <div class="dialogue" id="dialogue"></div>
+  <img src="https://github.com/yokonoha/bin/blob/main/1.png?raw=true" class="charL" id="charL" style="display:none;">
+  <img src="https://github.com/yokonoha/bin/blob/main/3.png?raw=true" class="charC" id="charC" style="display:none;">
+  <img src="https://github.com/yokonoha/bin/blob/main/2.png?raw=true" class="charR" id="charR" style="display:none;">
 
-   <!--ここまでsection2-->
-   <!--ここからsection3-->
-        <div class="B">
-            <h3>現在サイト改装作業中です。/サイト休止中</h3>
-<p>横茶横葉のソフトウェアプロジェクト、「横葉スタジオ」は通常営業中です。</p>
-    <a href="https://yokonoha.github.io/yokoha-st/">https://yokonoha.github.io/yokoha-st/</a>
-       <p>または検索エンジンで検索!</p><br>
-          <h2>現在Caffeine_CSS統合リニューアル作業を行っている関係で、サイトは一時休止中です。再開時期は未定です。</h2>
-            <h2>サイト改装中は横葉スタジオプロジェクトのサイト(通常通り閲覧可能)を御利用下さいませ。</h2>
-            <h3>新着情報 - 0件(詳細は<a href="https://x.com/YokochaYokoha">報連相アカウントへ!</a>)</h3>
-            <noscript><h1><font color="red">Javascriptが無効です。一部コンテンツは表示できません。<br>Coffeeブラウザーの場合は快適読書モードまたは緊急データセーバーをオフにしてください。</font></h1></noscript>
-<p>Info div調整中...</p>
-        </div>
 
-    <!--    <div class="G">
-                        <h3>横茶横葉からのお知らせ 2024年9月版(秋)</h3>
-        <div class="caroucelkari2">
-
-            <div class="carouselimgs">
-
-            <div class="imgcontainer"><img src="bs0.png" alt="ヘッダーカールセル画像"></div>
-            <div class="imgcontainer"><img src="leftntc.png" alt="ヘッダーカールセル画像"></div>
-            <div class="imgcontainer"><a href="https://yokonoha.github.io/readme"><img src="chgntc.png" alt="ヘッダーカールセル画像"></a></div>
-            </div>
-        </div>
-        </div>
-            
--->
-<!--<div class="E">
-    <h3>横茶横葉のBGM(がればんです)</h3>
-    <p>"ドライブ" from 横茶横葉Instrumentals -試聴↓</p>
-    <iframe src="https://www.youtube.com/embed/aHgNG2a1vjc?si=G7wEbMneRrnJK7RB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>"練習" from 横茶横葉Instrumentals -試聴↓</p>
-    <iframe src="https://www.youtube.com/embed/eHrS0vwFbbs" title="練習" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
--->
-<!--
-<div class="F">
-    <h3>YouTubeの動画(一部)</h3>
-    <iframe src="https://www.youtube.com/embed/90J5GfshHzA" title="「あんずはあんずが食べたい!」 ミニゲーム紹介映像" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe  src="https://www.youtube.com/embed/hnN3JGMeFcA" title="鳩 (まぢか)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe  src="https://www.youtube.com/embed/jQcipoGEiO4?si=ysZVwCzojZANMfxA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/Ps2ftSw4WMc?si=5ZYIyAhsMh411hi5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-        -->
-        <div class="C">
-<h3>各種サービス一覧</h3>
-<br>
-  
-<h3>Contents div調整中...</h3>
-        </div>
-   <div class="D">
-<h3>現在サイト改装作業中です。/サイト休止中</h3>
-<p>横茶横葉のソフトウェアプロジェクト、「横葉スタジオ」は通常営業中です。</p>
-    <a href="https://yokonoha.github.io/yokoha-st/">https://yokonoha.github.io/yokoha-st/</a>
-       <p>または検索エンジンで検索!</p>
-<br>
-<h3>Contacts</h3>
-<p>Xの横葉個人アカウント、Facebook(アカウントなし)、Thredsでのご連絡はお受け出来ませんが、Xのプロジェクトアカウント(@YokochaYokoha)、instagramアカウント(@y.yokoha)、Blueskyアカウント(@yokochayokoha.bsky.social)では承っております。また、メール(yokochayokoha@duck.com)も可能ですが、確認頻度は非常に低いため、各種SNSアカウントからのご連絡をお勧めいたします。</p>
+  <!--おまけ appendix-->
+  <!--ロード画面風説明画面/Description screen(like a loading screen)-->
+<div class="ls" id="ls">
+  <div>
+    <img src="tips.png" alt="Tips" width="45%">
+    <p>Now Loading...</p>
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
     </div>
-           <div class="F" id="hd" style="display:none;">
-<h3>管理者向け</h3>
+</div>
+</div>
+<!--ホワイトアウト/White out-->
+<div class="wo" id="wo"></div>
 
-<input type="text" id="searchQuery" placeholder="AdminPass">
-<button onclick="admin()">Apply</button>
-    </div>
-   <!--ここまでsection3-->
-    </main>
-
-
-
-    <footer>
-        &copy; 2023-2024 横茶横葉(YokochaYokoha),Mikan All Rights Reserved.
-        
-        <p>Made by YokochaYokoha!</p>
-        <button onclick="admindiv()">Rev.3.2</button>
-    </footer>
 </body>
-    <script>
-        function admindiv()
-            {
-            document.getElementById("hd").style.display="block";
-            }
-                function admin() 
-         {
-            var query = document.getElementById('searchQuery').value;
-            if (query) {
-                var url = "https://yokonoha.github.io/" + encodeURIComponent(query);
-
-                window.location.href = url;
-
-            } else {
-               alert("管理者パスワードを入力してください。");
-            }
-        }
-    </script>
+<script src="./rvsys.js"></script>
 </html>
