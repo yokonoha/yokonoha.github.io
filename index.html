@@ -3,29 +3,69 @@
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>横茶横葉のサイト(Re)</title>
-  <link href="caffeine.css" rel="stylesheet"/>
-  <meta name="description" content="アドレスをお引越しした横茶横葉のサイトです。改装作業終了は2025年1月頃を予定しています。">
+  <link href="caffeine.css" rel="stylesheet"/><meta name="description" content="アドレスをお引越しした横茶横葉のサイトです。改装作業終了は2025年1月頃を予定しています。">
+  
   <meta charset="UTF-8">
 </head>
+<style>
+  progress
+  {
+    height: 20px;
+    accent-color: green;
+  }
+  iframe
+  {
+    height: 70vh;
+    width: 70vw;
+    max-width: 800px;
+  }
+  #form
+  {
+  width: 100%;
+  background-color: bisque;
+  }
+  #form2
+  {
+  width: 100%;
+  background-color: bisque;
+  }
+  #rotate:hover
+  {
+transition: 3s ease-in-out;
+transform: rotate(720deg);
+  }
+  a:link
+    {
+        color: #0b8a20;
+        text-decoration: none;
+    }
+    a:visited
+    {
+        color: #0b8a20;
+        text-decoration: none;
+    }
+    footer
+    {
+      background-image: url('./hinathankscard.png');
+      background-repeat: no-repeat;
+            background-size: contain;
+    }
+</style>
 <body>
-  <div class="A">  
-    <div class="title">  
-    <img src=".trademark.png" width="15%" height="15%">  
-    <h1>横茶横葉のサイト(Re)</h1>   
-     </div>  
-     </div>  
+     <img id="banner" src="./banner (6).png" alt="banner" style="width: 100%; height: auto; max-width: 800px; border-radius: 50px;">
+
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="B"> 
-<!--マーク化テンプレート/Marks template-->
-
-<!--div B Start-->
-
-<img src="https://yokonoha.github.io/tips.png" width="50%" alt="PlsWait!">
-
-<!--div B End-->
+      <h3>横茶横葉のサイトへようこそ~!</h3>
+      <p>このサイトはとある普通の人が、サイトを持ってみたいという小さな頃の夢を叶えるために作った個人サイトです。</p>
+      <p>このサイトを管理人はいろいろいじって"遊んでます"。その為、更新頻度はまばらです。</p>
+      <p>このサイトは、とりあえず作ってみた 個人 サイトです!</p>
+      <p>もし、ソフトウェアや開発者向けコンポーネントをお探しの場合は別サイト「横葉スタジオプロジェクト」へ下のボタンから移動できます。</p>
+      <p>「オープンソース(一部)、課金なし、広告なし」のプログラムをお楽しみください!</p>
+      <a href="https://yokonoha.github.io/yokoha-st"><img src="ysp.png" width="50%"></a>
     </div> 
     
     <div class="cnt"><p></p></div>
@@ -35,8 +75,47 @@
     
     <div class="C">  
 <!-- ここに要素を挿入-->
- <p>現在このサイトは改装作業中です。</p>
-<a href="https://yokonoha.github.io/yokoha-st">ソフトウェアのご利用、ダウンロードはこちらのサイトからどうぞ</a>
+<h2>Index/目次</h2>
+<a href="#News"><p>Latest News!/最新情報 & Links!</p></a>
+<a href="#dev"><p>Development Status!/開発進捗状況</p></a>
+<a href="#illust"><p>Illustrations!/イラスト</p></a>
+<a href="#game"><p>Games by Yokoha!/ゲーム開発</p></a>
+<a href="#web"><p>Web Services!/Webサービス一覧</p></a>
+<a href="#ccss"><p>CSS!/このサイトのスタイルシート[配布案内]</p></a>
+</p></a>
+
+</div>
+
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+   
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <canvas id="form"></canvas>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="E"  id="News">  
+<!-- ここに要素を挿入-->
+<h2>Latest News!</h2>
+<p>2024年12月20日: 予定より2日早くこのサイトのリニューアルを行いました。新しいデザインを採用し、新しいコンテンツを追加しました。</p>
+<br>
+<p>2024年12月23日: 新WebサービスCaffeine_Movieが横葉スタジオプロジェクトとして公開されました!</p>
+<br>
+<h2>Links!</h2>
+<a href="https://yokonoha.github.io/yokoha-st">横葉スタジオプロジェクト</a>
+<br>
+<a href="https://github.com/yokonoha">Githubリポジトリページ</a>
+<br>
+<a href="https://www.youtube.com/@yokocha.yokoha">チャンネル(いまは機能していません。)</a>
+<br>
+<a href="https://bsky.app/profile/yokochayokoha.bsky.social">BlueSkyアカウント(アクティブ)</a>
+<br>
+<a href="https://twitter.com/yokocha_yokoha">旧Twitter(非アクティブ 今は個人的な見る専垢になってます。)</a>
     </div>  
     
     <div class="cnt"><p></p></div>
@@ -44,39 +123,18 @@
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     
-    <div class="D">  
+<div class="F"></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="G"  id="dev">  
 <!-- ここに要素を挿入-->
-
-    </div>  
-    
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    
-    <div class="E">  
-<!-- ここに要素を挿入-->
-
-    </div>  
-    
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    
-    <div class="F">  
-<!-- ここに要素を挿入-->
-
-    </div>  
-    
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    
-    <div class="G">  
-<!-- ここに要素を挿入-->
-
+<h2>Latest Development Status!</h2>
+<iframe src="./devmonitor.html"></iframe>
+<br>
+<a href="./devmonitor.html"><p>開発状況一覧ページへ</p></a>
     </div>  
     
     <div class="cnt"><p></p></div>
@@ -92,25 +150,19 @@
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
-    <div class="I">  
+    <div class="I"  id="illust">  
         <!-- ここに要素を挿入-->
-        
+        <h2>Illustrations! <small>by Yokonoha</small></h2>
+        <p>ペンネーム:よこのは横葉 として絵を描きます。(練習中。)</p>
+        <p style="user-select: none;">まだここに貼るものは決めていません... 練習中イラストは各種SNSにて公開しています。</p>
+        <canvas id="form2" style="max-width: 800px;"></canvas>
      </div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="J">  
-                <!-- ここに要素を挿入-->
-                
-     </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="K">  
-     <!-- ここに要素を挿入-->
-                        
+
      </div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
@@ -124,9 +176,11 @@
       <div class="cnt"><p></p></div>
       <div class="cnt"><p></p></div>
       <div class="cnt"><p></p></div>
-      <div class="M">  
+      <div class="M" id="game">  
        <!-- ここに要素を挿入-->
-                          
+        <h2>Games by Yokoha!</h2>
+        <p>横葉スタジオプロジェクトの一環として、横茶横葉が開発したゲームを紹介します。</p>
+        <p>公開準備中です...</p>
        </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
@@ -140,9 +194,62 @@
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
-    <div class="M">  
+    <div class="M" id="web">  
     <!-- ここに要素を挿入-->
+    <h2>Web Services!</h2>
+    <p>横葉スタジオプロジェクトの一環として、横茶横葉が開発したWebサービスを紹介します。</p>
+    <a href="https://yokonoha.github.io/Caffeine_Music/" style="text-decoration: none; color: rgb(41, 40, 40);">
+      <div class="title" style="background-color: sandybrown; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); max-width: 900px; margin: 20px auto;">
+          <img src="./ic.png" width="15%" height="15%">  
+          <h2>Caffeine_Music(JP)</h2>   
+      </div></a>
+      <div class="marks-container">
+          <div class="marks-r-y">
+              <p>Web Apps</p>
+          </div>
+          <div class="marks-r-b">
+              <p>Open Source</p>
+          </div>
+          <div class="marks-r-r">
+              <p>Web-based</p>
+          </div>
+          <div class="marks-r-o">
+              <p>PWA</p>
+          </div>
+          <div class="marks-r-g">
+              <p>Music</p>
+          </div>
+      </div>
+      <p>Caffeine_CSSを活用して製作されたWebベースローカル音楽ファイルプレーヤー</p>
+      <p><small>English Version is also available :<a href="https://yokonoha.github.io/Caffeine_Music/en">Caffeine_Music(EN)</a></small></p>
+    <br>
 
+
+<a href="https://yokonoha.github.io/Caffeine_Movie/" style="text-decoration: none; color: rgb(41, 40, 40);">
+      <div class="title" style="background-color: sandybrown; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); max-width: 900px; margin: 20px auto;">
+          <img src="./ic2.png" width="15%" height="15%">  
+          <h2>Caffeine_Movie(JP)</h2>   
+      </div></a>
+      <div class="marks-container">
+          <div class="marks-r-y">
+              <p>Web Apps</p>
+          </div>
+          <div class="marks-r-b">
+              <p>Open Source</p>
+          </div>
+          <div class="marks-r-r">
+              <p>Web-based</p>
+          </div>
+          <div class="marks-r-o">
+              <p>PWA</p>
+          </div>
+          <div class="marks-r-g">
+              <p>Movie</p>
+          </div>
+      </div>
+      <p>Caffeine_CSSを活用して製作されたWebベースローカル動画ファイルプレーヤー</p>
+    <br>
+<a href="https://yokonoha.github.io/yokoha-st"><h3>その他Webサービスは横葉の工房「横葉スタジオプロジェクト」にてご紹介しています! タップして表示</h3></a>
     </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
@@ -152,107 +259,65 @@
     <!-- ここに要素を挿入-->
 
     </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="O">  
-    <!-- ここに要素を挿入-->
 
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="P" id="ccss">  
+    <!-- ここに要素を挿入-->
+<h2>CSS!/CSSの配布</h2>
+<p>このサイトではCaffeine_CSSを使用してデコレーションを行いました。</p>
+<p>このCSSはどなたでも営利非営利問わずサイトにご活用いただけます。</p>
+<p>ライセンスは横茶横葉Aライセンスです。</p>
+<p>↓横葉スタジオプロジェクトより複製</p>
+<a href="https://github.com/yokonoha/Caffeine_CSS" style="text-decoration: none; color: rgb(41, 40, 40);">
+  <div class="title" style="background-color: wheat; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); max-width: 900px; margin: 20px auto;">
+      <img src="./anzu.png" width="15%" height="15%">  
+      <h2>Caffeine CSS</h2>   
+  </div></a>
+  <div class="marks-container">
+      <div class="marks-r-g">
+          <p>Components</p>
+      </div>
+      <div class="marks-r-r">
+          <p>Open Source</p>
+      </div>
+      <div class="marks-r-b2">
+          <p>CSS</p> 
+     </div>
+     <div class="marks-r-y">
+      <p>Y.Yokoha A License</p> 
+  </div>
+      </div>
+  <p>横葉スタジオ制作のCSSを配布しています。また、簡単にWebページが製作できるように実装用テンプレートもご用意しています!</p>
+  <p>横茶横葉Aライセンスの下で自由に商用利用可能です! </p>
+  
     </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
-    <div class="P">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="Q">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="R">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="S">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="T">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="U">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="V">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="W">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="X">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="Y">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="cnt"><p></p></div>
-    <div class="Z">  
-    <!-- ここに要素を挿入-->
-
-    </div>
-
+    <button onclick="admindiv()" style="background-color: white;">Rev.5.0 (Last Edited:2024/12/30)</button>
+    <div class="F" id="hd" style="display:none;">
+      <h3>管理者向け操作画面</h3>
+      <input type="text" id="searchQuery" placeholder="Type an AdminPass">
+      <button onclick="admin()" style="background-color: white;">Apply</button>
+          </div>
     <footer>
+      <h3>横茶横葉のサイト</h3>
 
-      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS">Caffeine_CSS</a>を使用しています。</small></p>  
+      <p>Banner Characters: Hina & Anzu by Y.Yokoha</p>
+      <p>Contacts: yokochayokoha@duck.com</p>
+      <a href="https://yokonoha.github.io/readme"><p>利用規約/Terms of Services</p></a>
+      <p><small>Thanks for Visitors & Contributors of software!</small></p>  
+      <p>©2024-2025 Y.Yokoha All Rights Reserved.</p>
+      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS">Caffeine_CSS</a>を使用しています。</small></p>
     </footer>
 
 </body>
+<script src="./animations.js"></script>
+<script src="./slideanimations.js"></script>
+<script src="./randpicker.js"></script>
+<script src="./acnt.js"></script><!--Admin Controler-->
 </html>
