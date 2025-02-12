@@ -13,7 +13,7 @@ let protectionlevel=1;//Default value is 1 Range 1~2 (2 is the highest.)
 
 if (protectionlevel=1)
 {
-if (navigator.userAgent.includes("archive"))
+if (navigator.userAgent.includes("ia_archiver"))
 {
     console.log("[das] Suspicious UA detected. Trying to protect content by hiding...");
     document.body.style.display="none";
