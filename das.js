@@ -10,7 +10,7 @@
 
 //Variable
 let protectionlevel=1;//Default value is 1 Range 1~2 (2 is the highest.)
-
+console.log("[das] das service is now activated. Trying to protect your important site.");
 if (protectionlevel=1)
 {
 if (navigator.userAgent.includes("ia_archiver"))
