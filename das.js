@@ -1,11 +1,8 @@
 //////////////////////////////////////
-////    Dislike Archive Script    ////
 ////     Prevent displaying       ////
 ////           Beta!              ////
 //////////////////////////////////////
 
-// The author is not responsible for this script. Use at your own risk.
-//Please Copy&Paste when you want to implement this script to your works!
 //  <script src="./das.js"></script>
 
 //Variable
@@ -28,9 +25,49 @@ else
             document.body.style.display="none";
             
         }
-        else if(navigator.userAgent.includes("ia"))
+        else if(navigator.userAgent.includes("ia_"))
         {
             console.log("[das lev2] Suspicious UA detected. Trying to protect content by hiding...");
             document.body.style.display="none";
         }
+    else if(navigator.userAgent.includes("crawl"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("20100101"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("IAHarvester"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("org_bot"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("wpull"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("Archive"))
+    {
+        hidecontents();
+    }
+        else if(navigator.userAgent.includes("/faq/"))
+    {
+        hidecontents();
+    }
+    else if(navigator.userAgent.includes("/115.0.0.0"))
+    {
+        hidecontents();
+    }    
+}
+
+
+function hidecontents()
+{
+                console.log("[das lev2] Suspicious UA detected. Trying to protect content by hiding...");
+            document.body.style.display="none";
+            alert("コンテンツ保護機能が作動しました。誤作動である場合はブラウザーを更新するか、ブラウザーを変更してください。");
 }
