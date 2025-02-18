@@ -6,7 +6,7 @@
 //  <script src="./das.js"></script>
 
 //Variable
-let protectionlevel=1;//Default value is 1 Range 1~2 (2 is the highest.)
+let protectionlevel=2;//Default value is 1 Range 1~2 (2 is the highest.)
 console.log("[das] das service is now activated. Trying to protect your important site.");
 if (protectionlevel=1)
 {
