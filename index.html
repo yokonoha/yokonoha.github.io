@@ -12,7 +12,8 @@
 </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>横茶横葉のサイト - Yokonoha!</title>
-  <link href="caffeine.css" rel="stylesheet"/><meta name="description" content="こちらは横茶横葉の個人ホームページです!とりあえず作って設置してみることにしました。">
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta name="description" content="こちらは横茶横葉の個人ホームページです!とりあえず作って設置してみることにしました。">
   
   <meta charset="UTF-8">
 </head>
@@ -106,6 +107,7 @@ transform: rotate(720deg);
     <div class="E"  id="News">  
 <!-- ここに要素を挿入-->
 <h2>Latest News!</h2>
+<p>2025年03月04日: Theme Auto Changer Script, FSLinearを製作、公開し、このサイトにも実装してみました。このサイトで動作確認します。</p>
 <p>2025年02月15日: コンテンツを簡素化しました。</p>
 <p>- Coffee Ver.22のアップデートパッケージ制作を開始しました。</p>
 <p>- 新Webサービスを計画中です。</p>
@@ -272,7 +274,7 @@ transform: rotate(720deg);
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
-    <button onclick="admindiv()" style="background-color: white;">Rev.5.1 (Last Modified:2025/02/12)</button>
+    <button onclick="admindiv()" style="background-color: white;">Rev.6.0 (Last Modified:2025/03/04)</button>
     <div class="F" id="hd" style="display:none;">
       <h3>管理者向け操作画面</h3>
       <input type="text" id="searchQuery" placeholder="Type an AdminPass">
@@ -285,10 +287,11 @@ transform: rotate(720deg);
       <a href="https://yokonoha.github.io/readme"><p>利用規約/Terms of Services</p></a>
       <p><small>Thanks for Visitors & Contributors!</small></p>  
       <p>©2024-2025 Y.Yokoha All Rights Reserved.</p>
-      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS">CaffeineCSS</a>を使用しています。</small></p>
+     <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>
     </footer>
 
 </body>
+<script src="./themeac.js"></script>
 <script src="./acnt.js"></script><!--Admin Controler-->
 <script src="./das.js"></script>
 </html>
