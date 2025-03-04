@@ -43,7 +43,7 @@ footertext.setAttribute("href","https://github.com/yokonoha/FSLinear");
 footertext.innerText="FSLinear";
 console.log(`[ThemeAC] The Dark Theme is now selected. 18:00~`);
 }
-else if (hour>0&&hour<6)
+else if (hour>=0&&hour<6)
 {
     linkcss.setAttribute("href","fslinear.css");
     footertext.setAttribute("href","https://github.com/yokonoha/FSLinear");
