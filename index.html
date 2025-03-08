@@ -59,11 +59,65 @@ transform: rotate(720deg);
       justify-content:right;
       text-align:right;
     }
+    #splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    
+    background-image: url('./bgpic.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 </style>
 <body>
-  <div class="A>
-    <h2>横茶横葉のサイト</h2>
-    <h3>-Yokonoha!</h3>
+    <div id="splash" style="z-index: 1000;">
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./trademark.png" width="15%" height="15%">  
+                <h1>横茶横葉のサイト</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                    <div class="marks-r-b">
+                        <p>Yokonoha!</p>  
+                    </div>  
+                 </div>
+        </div> </div>
+        </div>
+    <header>
+    <div class="marks-container">
+        <div class="marks-r-y" id="twbtn"><p>Social Media</p></div>
+        <div class="marks-r-b" id="biobtn"><p>Biography</p></div>
+        <div class="marks-r-r" id="gtbtn"><p>Development</p></div>
+        <div class="marks-r-o" id="wkbtn"><p>Works</p></div>
+    </div>
+</header>
+ 
+    <br>
+  <div class="A">
+    <p>Welcome to</p>
+    <h2>横茶横葉のサイト<small> - Yokonoha!</small></h2>
+    <h3>現在ローカル時刻 by <a href="https://github.com/yokonoha/timesysre">TimeSysRe</a> :<br><span id="year"></span>年 <span id="month"></span>月<span id="date"></span>日  <span id="hour"></span>:<span id="min"></span> <small><span id="sec"></span></small></h3>
   </div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
@@ -71,11 +125,11 @@ transform: rotate(720deg);
      <div class="cnt"><p></p></div>
      <div class="B"> 
       <h3>横茶横葉のサイトへようこそ~!</h3>
-      <p>このサイトはとある普通の人が、サイトを持ってみたいという小さな頃の夢を叶えるためにとりあえず作ってみている個人サイトです。</p>
-      <p>補足事項: 管理人は筋金入りのスマホ好きです。(スマホは管理人の人生そのものです。特にOS[システム]が好きです!)</p>
-       <p>当サイトでは至る所にスマホに関連した何かが散りばめられています。</p>
+      <p>このサイトはとある普通の人が、サイトを持ってみたいという小さな頃の夢を叶えるためにとりあえず作って運営してみている個人サイトです。</p>
+      <p>管理人は筋金入りのスマホ好きです。(スマホは管理人の人生そのものです。特にOS[システム]がたまらなく好きな人です。)</p>
+      <p>このサイトは夜にカッコよく、昼間にかわいらしく自動的にデザインされます。</p>
       <p>ソフトウェアや開発者向けコンポーネントをお探しの場合は別サイト「横葉の工房」へ下のボタンから移動できます。</p>
-      <p>「オープンソース(一部)、課金なし、広告なし」のプログラムをお楽しみください!</p>
+      <p>「オープンソース(一部)、無料、広告なし」のソフト&アプリを是非ご活用ください!</p>
       <a href="https://yokonoha.github.io/yokoha-st">横葉の工房 へ移動</a>
        <br>
        <p>※このサイト(横茶横葉のサイト)にはアナリティクスタグを設定しています。詳細は利用規約2に記載しています。</p>
@@ -91,6 +145,7 @@ transform: rotate(720deg);
 <h2>Index/目次</h2>
 <a href="#News"><p>Latest News!/最新情報 & Links!</p></a>
 <a href="#dev"><p>Development Status!/開発進捗状況</p></a>
+<a href="#tips"><p>Tips!/知ってみよう! Tips!のコーナー</p></a>
 <a href="#web"><p>Web Services!/Webサービス一覧</p></a>
 <a href="#ccss"><p>CSS!/このサイトのスタイルシート[配布案内]</p></a>
 </p></a>
@@ -107,13 +162,17 @@ transform: rotate(720deg);
     <div class="E"  id="News">  
 <!-- ここに要素を挿入-->
 <h2>Latest News!</h2>
+<p>2025年03月08日: サイトコンテンツの整理と追加をしてみました。</p>
 <p>2025年03月04日: Theme Auto Changer Script, FSLinearを製作、公開し、このサイトにも実装してみました。このサイトで動作確認します。</p>
 <p>- 午後6時、午前6時に自動でガラッとサイトの雰囲気変わるはず。(再読み込みが必要。)</p>
 <p>2025年02月15日: コンテンツを簡素化しました。</p>
 <p>- Coffee Ver.22のアップデートパッケージ制作を開始しました。</p>
 <p>- 新Webサービスを計画中です。</p>
 <br>
-<p>2025年02月14日: 一部のデバイスにて発生していた表示崩れを解消しました。</p>
+<br>
+<h2>Remarkable SNS Posts!</h2>
+<blockquote class="twitter-tweet" data-lang="ja" data-theme="dark"><p lang="ja" dir="ltr">おおお! 動いたぁ!!! <a href="https://t.co/AgtSgvpxbp">pic.twitter.com/AgtSgvpxbp</a></p>&mdash; よこのは横葉 (横茶横葉) (@yokocha_yokoha) <a href="https://twitter.com/yokocha_yokoha/status/1896849277806408003?ref_src=twsrc%5Etfw">2025年3月4日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>More personal posts: <a href="https://x.com/yokocha_yokoha">Click Here </a></p>
 <br>
 <h2>Links! & Relations!</h2>
 <a href="https://yokonoha.github.io/yokoha-st">横葉の工房</a>
@@ -155,9 +214,20 @@ transform: rotate(720deg);
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
      <div class="cnt"><p></p></div>
-     <div class="L">  
+     <div class="L" id="tips">  
       <!-- ここに要素を挿入-->
-                         
+    <h3>知ってみよう Tips!のコーナー<br><br>今日は3か国語で何曜日? <br><small>Powered by <a href="https://github.com/yokonoha/timesysre">TimeSysRe</a>モジュール<br>毎日自動で変わります。</small></h3> 
+    <p>日本語</p>
+    <p>　今日は<span id="youbi"></span>です。</p>
+    <p>英語 / (English)</p>
+    <p>　Today is <span id="day"></span>.</p> 
+    <p>中国語(簡体字) / (汉语[简体])</p>
+    <p>　今天是<span id="xingqi"></span>。</p>
+    <br>
+    <p>日本語は日月火水木金土と曜日が進みますが<br>英語はSun Mon Tue Wed Thu Fri Satと進む ということはご存じの通りですね!</p>
+    <p>しかし中国語では違います。星期(xingqi シンチー)のあと日曜を天、月曜を1として土曜の6までの数字を付加して曜日を天一二三四五六(ティエン イー アァr サン スー ウー リュー)と数えていきます。</p>
+    <p>水曜日なら 星期三(xingqi san シンチーサン) です!</p>
+    <p><small>※発音は管理者の発音を単純にカタカナ表記しただけなので不正確な場合があります。</small></p>
       </div>
       <div class="cnt"><p></p></div>
       <div class="cnt"><p></p></div>
@@ -226,7 +296,7 @@ transform: rotate(720deg);
       </div>
       <p>CaffeineCSSを活用して製作されたWebベースローカル動画ファイルプレーヤー</p>
     <br>
-<a href="https://yokonoha.github.io/yokoha-st"><h3>その他Webサービスは横葉の工房「横葉スタジオプロジェクト」にてご紹介しています! タップして表示</h3></a>
+<a href="https://yokonoha.github.io/yokoha-st"><h3>その他Webサービスは横葉の工房へ! タップして表示</h3></a>
     </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
@@ -245,7 +315,8 @@ transform: rotate(720deg);
     <!-- ここに要素を挿入-->
 <h2>CSS!/CSSの配布</h2>
 <p>このサイトではCaffeineCSS,FSLIiearを使用してデコレーションを行いました。</p>
-<p>このCSSはどなたでも営利非営利問わずサイトにご活用いただけます。</p>
+<p>さらに自動化スクリプトによって昼と夜でCSSが入れ替わります。</p>
+<p>これらのCSSはどなたでも営利非営利問わずサイトにご活用いただけます。</p>
 <p>ライセンスは横茶横葉Aライセンスです。</p>
 <p>↓横葉の工房より複製</p>
 <a href="https://github.com/yokonoha/Caffeine_CSS" style="text-decoration: none; color: rgb(41, 40, 40);">
@@ -317,7 +388,7 @@ transform: rotate(720deg);
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
-    <button onclick="admindiv()" style="background-color: white;">Rev.6.0 (Last Modified:2025/03/04)</button>
+    <button onclick="admindiv()" style="background-color: white;">Rev.6.1 (Last Modified:2025/03/09)</button>
     <div class="F" id="hd" style="display:none;">
       <h3>管理者向け操作画面</h3>
       <input type="text" id="searchQuery" placeholder="Type an AdminPass">
@@ -334,7 +405,9 @@ transform: rotate(720deg);
     </footer>
 
 </body>
+<script src="./spmgroptimized.js"></script>
 <script src="./themeac.js"></script>
 <script src="./acnt.js"></script><!--Admin Controler-->
 <script src="./das.js"></script>
+<script src="./timesysre.js"></script>
 </html>
