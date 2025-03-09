@@ -21,8 +21,8 @@ document.getElementById("twbtn").addEventListener("click",()=>
     });
     document.getElementById("biobtn").addEventListener("click",()=>
     {
-        alert("Coming Soon!");
-       // window.open("https://yokonoha.github.io/biography","_blank");
+        
+         window.open("https://yokonoha.github.io/biography","_blank");
     });
     document.getElementById("gtbtn").addEventListener("click",()=>
     {
