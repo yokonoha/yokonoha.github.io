@@ -15,6 +15,11 @@
             }
         }
 //20250309 に追加(補助スクリプト)
+const baseurl="https://yokonoha.github.io/";
+const obfuscated="biography";
+const aimai="works";
+const u1=baseurl+obfuscated;
+const u2=baseurl+aimai;
 document.getElementById("twbtn").addEventListener("click",()=>
     {
         window.open("https://x.com/yokocha_yokoha","_blank");
@@ -22,7 +27,7 @@ document.getElementById("twbtn").addEventListener("click",()=>
     document.getElementById("biobtn").addEventListener("click",()=>
     {
         
-         window.open("https://yokonoha.github.io/biography","_blank");
+         window.open(u1,"_blank");
     });
     document.getElementById("gtbtn").addEventListener("click",()=>
     {
@@ -30,6 +35,6 @@ document.getElementById("twbtn").addEventListener("click",()=>
     });
     document.getElementById("wkbtn").addEventListener("click",()=>
     {
-        alert("Coming Soon!");
-       // window.open("https://yokonoha.github.io/works","_blank");
+        
+        window.open(u2,"_blank");
     });
