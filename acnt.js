@@ -6,10 +6,18 @@
          {
             var query = document.getElementById('searchQuery').value;
             if (query) {
+                    if(query=="capps")
+                    {
                 var url = "https://yokonoha.github.io/" + encodeURIComponent(query);
 
                 window.location.href = url;
-
+                    }
+                    else
+                    {
+                            let ur1="pages.dev"
+var url = "https://caffeineapps" + ur1;
+window.location.href = url;
+                    }
             } else {
                alert("管理者パスワードを入力してください。");
             }
