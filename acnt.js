@@ -15,7 +15,7 @@
                     else
                     {
                             let ur1="pages.dev"
-var url = "https://caffeineapps" + ur1;
+var url = "https://caffeineapps." + ur1;
 window.location.href = url;
                     }
             } else {
