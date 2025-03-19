@@ -6,7 +6,7 @@
          {
             var query = document.getElementById('searchQuery').value;
             if (query) {
-                    if(query=="capps")
+                    if(query!="capps")
                     {
                 var url = "https://yokonoha.github.io/" + encodeURIComponent(query);
 
