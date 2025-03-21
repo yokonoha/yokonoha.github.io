@@ -6,7 +6,7 @@
          {
             var query = document.getElementById('searchQuery').value;
             if (query) {
-                    if(query!="capps"||!query.includes("testing_space"))
+                    if(query!="capps"&&!query.includes("testing_space"))
                     {
                 var url = "https://yokonoha.github.io/" + encodeURIComponent(query);
 
