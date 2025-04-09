@@ -39,7 +39,7 @@ const u1=baseurl+obfuscated;
 const u2=baseurl+aimai;
 document.getElementById("twbtn").addEventListener("click",()=>
     {
-        window.open("https://x.com/yokocha_yokoha","_blank");
+        window.open("https://yokonoha.github.io/yokoha-st","_blank");
     });
     document.getElementById("biobtn").addEventListener("click",()=>
     {
