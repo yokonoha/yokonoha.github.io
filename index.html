@@ -223,12 +223,12 @@ transform: rotate(720deg);
         <br>
         <img src="./main.gif" width="45%">
         <h2><ruby>横井陽菜<rt>よこい ひな</rt></ruby> <small>Hina Yokoi</small></h2>
-        <h3>生年月日:2006年2月12日</h3>
+        <h3>生年月日: 2月12日</h3>
         <h3>身長:161.1cm</h3>
         <h3>体重:44kg</h3>
         <h3>好きな食べ物:ティラミス</h3>
         <h3>好きなもの:<strong>スマホ</strong></h3>
-        <h3>スマートフォンやタブレットが大好きな<span id="nenrei"></span>歳。</h3>
+        <h3>スマートフォンやタブレットが大好きな19歳。</h3>
         <h3>性格は大人しく、心優しい人柄。<br>スマホを前にするとテンションが上がる。</h3>
         <h3>頭には寝るとき以外常に<br>スマホを二等分した髪飾りを身に付けている。</h3>
         <h3>特技は人のスマホの機種当てゲーム。</h3>
@@ -262,26 +262,7 @@ transform: rotate(720deg);
 
 <script src="./themeac.js"></script>
 <script src="./acnt.js"></script><!--Admin Controler-->
-<script>
-        function calcAge(birthDate) {
-      const today = new Date();
-      let age = today.getFullYear() - birthDate.getFullYear();
 
-      // まだ誕生日が来ていなければ年齢を1歳減らす
-      const hasBirthdayPassed =
-        today.getMonth() > birthDate.getMonth() ||
-        (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
 
-      if (!hasBirthdayPassed) {
-        age--;
-      }
-
-      return age;
-    }
-
-    const birthday = new Date(2006, 1, 12); // 月は0始まりなので1は2月
-    const age = calcAge(birthday);
-    document.getElementById("nenrei").textContent = age;
-</script>
 
 </html>
