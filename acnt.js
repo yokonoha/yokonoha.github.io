@@ -31,27 +31,3 @@
                alert("管理者パスワードを入力してください。");
             }
         }
-//20250309 に追加(補助スクリプト)
-const baseurl="https://yokonoha.github.io/";
-const obfuscated="biography";
-const aimai="works";
-const u1=baseurl+obfuscated;
-const u2=baseurl+aimai;
-document.getElementById("twbtn").addEventListener("click",()=>
-    {
-        window.open("https://yokonoha.github.io/yokoha-st","_blank");
-    });
-    document.getElementById("biobtn").addEventListener("click",()=>
-    {
-        
-         window.open(u1,"_blank");
-    });
-    document.getElementById("gtbtn").addEventListener("click",()=>
-    {
-        window.open("https://github.com/yokonoha/","_blank");
-    });
-    document.getElementById("wkbtn").addEventListener("click",()=>
-    {
-        
-        window.open(u2,"_blank");
-    });

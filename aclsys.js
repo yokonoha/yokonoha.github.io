@@ -58,7 +58,7 @@ function mojibanchanger()
         mojiban.style.borderStyle="dotted";
         mojiban.style.filter="brightness(100%)";
         mojiban.style.backgroundImage=`none`;
-        document.getElementById("nodeco").style.display="none";
+
     }
 }
 setInterval(time2analog,100);

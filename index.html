@@ -30,11 +30,19 @@
 
   <main class="container">
     <section class="main">
+       <article class="F">
+        <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery</h2>
+        <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力するとファイル/URLを探してきてくれます。</p>
+        <input type="password" id="delibox" >
+        <button onclick="mv2thepage()">ファイル/URLを探す!</button><br><br>
+        <a href="#" id="mv2"><img src="./found.png" style="width: 50vw;" id="mv21" alt="ファイルが見つかりました!"></a>
+       <p><small>Rev.1.0/Made by Y.Yokoha</small></p>
+      </article>
         <h2>Latest News! / お知らせ!</h2>
  <article class="N">
         <h2>[予告] CaffeineApps臨時メンテナンスのお知らせ</h2>
-        <p>CaffeineApps(<a href="https://caffeineapps.pages.dev">https://caffeineapps.pages.dev</a>)は機能改善、アップデートのため、今後メンテナンス作業を行います。<br>作業中はページのリンク切れやサイトがご利用いただけなくなることがございます。<br>なお、CaffeineMusicやMovieなど一部のWebアプリについてはミラーサイトをご用意しています。詳しくは横葉スタジオのサイトを御覧ください。<br>いつも横茶横葉のサービスをご利用いただき、誠にありがとうございます。</p>
-    <p><small>2025/10/18</small></p>
+        <p>CaffeineAppsは機能改善、アップデートのため、今後メンテナンス作業を行います。<br>作業中はページのリンク切れやサイトがご利用いただけなくなることがございます。<br>なお、CaffeineMusicやMovieなど一部のWebアプリについてはミラーサイトをご用意しています。詳しくは横葉スタジオのサイトを御覧ください。<br>いつも横茶横葉のサービスをご利用いただき、誠にありがとうございます。</p>
+    <p><small>2025/10/18(編集済み)</small></p>
       </article>
  <article class="A">
         <h2>横茶横葉の利用規約を改訂致しました</h2>
@@ -115,27 +123,13 @@
       <div class="sidebar-box">
         <img src="./trademark.png" alt="横茶横葉のロゴ" style="width: 60%;">
         <h3>プロフィール</h3>
-        <p>スマホが好きな一般人。新しいスマホもレトロなスマホも好きな人。(デザインとかUIとかUXとか独自機能とか....あと、デザインとか。)<br>
-特定のジャンル以外にも色々新しいことに挑戦することが今のマイブームです〜
-<br>
-<br>
-2018年からPC向けソフトウェアの製作を開始。<br>
-2020年よりサイト(別ドメイン)にてソフトウェア製作活動・成果物の配布を開始。 同年には初のスマホアプリ開発をスタート。<br>
-2021年にサイトを移転。翌年2022年に個人として活動を開始。<br>
-2023年より活動名を横茶横葉に決定し、活動続行。<br>
-2024年より、3Dモデリング・イラスト等のアート分野に活動範囲を広げる。<br>
-2025年、一次創作キャラクターデザイン等のジャンルを他主体へ分離(みどりは)。ソフトウェア配布統合サイトYOKONOHAを整備。<br>
-現在に至るまで、ジャンルの枠に囚われない非営利な創作活動の道を切り開きながらも、スマホの魅力を伝えるため、スマホへの愛を原動力に日々様々な事に挑戦中。<br><br>
-
-使用言語: C#, JS, Kotlin, CSS, HTML, Python<br>
-ジャンル: ソフトウェア開発 スマホアプリ開発 3Dモデリング キャラクターデザイン イラストレーション(一次創作,二次創作) BGM,SE作成 動画コンテンツ制作 サイト制作 サイトデザイン Webアプリ開発 翻訳 汎用Web向けスクリプト製作
-
+        <p>スマホが好きないろんなことをする一般人。
 </p>
 
       </div>
       <div class="sidebar-box">
         <h3>このサイトについて</h3>
-        <p>このサイトは、横茶横葉のサイト1 です。横茶横葉のサイト2には営業時間がございますが、こちらのサイトは常時アクセス可能です。</p>
+        <p>このサイトは、横茶横葉のサイト1 です。メンテナンス中でもこちらのサイトは常時アクセス可能です。</p>
         <a href="https://yokonoha.pages.dev">Link to the site(Preparing...)</a>
         <h3>サイトバージョン</h3>
             <button onclick="admindiv()" style="background-color: white;">Rev.8.0 (Last Modified:2025/07/05)</button>
@@ -179,6 +173,7 @@
 <script src="./acnt.js"></script><!--Admin Controler-->
 <script src="timesysre.js"></script>
 <script src="./aclsys.js"></script>
+<script src="./delivery.js"></script>
 </html>
 
 
