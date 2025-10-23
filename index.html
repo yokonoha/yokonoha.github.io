@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>横茶横葉のサイト 1 - Y.Yokoha's Site | YokochaYokoha </title>
+  <title>横茶横葉のサイト - Y.Yokoha's Site | YokochaYokoha </title>
     <meta name="description" content="横茶横葉のサイト1へようこそ～。最新情報やお知らせを掲載しています。横茶横葉からファイルを受取りたい方はContents Delivery機能をご利用いただけます。">
     <meta name="keywords" content="横茶横葉, サイト1, お知らせ, 最新情報">
     <link rel="stylesheet" href="fsoverride.css">
@@ -20,7 +20,8 @@
 <body>
 
   <header>
-    <div class="logo" style="user-select: none;" id="gohome">横茶横葉のサイト 1</div>
+
+    <div class="logo" style="user-select: none;" id="gohome">横茶横葉のサイト!</div>
     <nav>
       <a href="#">メイン</a>
       <a href="https://yokonoha.pages.dev">統合サイトYOKONOHAへ移動</a>
@@ -33,23 +34,32 @@
        <article class="F">
         <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span style="color:white;"><small>ファイルロッカー検索システム</small></span></h2>
         <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力すると、預かっているファイル/URLを探してきてくれます。</p>
-        <input type="password" id="delibox" placeholder="パスワードを入力..."><br><br>
-        <button onclick="moveToPage()">指定されたパスワードで<br>ファイル/URLを検索する!</button><br><br>
-        <a href="#" id="mv2"><img src="./found.png" style="width: 50vw; display:none;  max-width: 850px;" id="mv21" alt="ファイルが見つかりました!"></a>
-       <p><small>Rev.1.0/Made by Y.Yokoha</small></p>
+        <div style="display: flex;">
+        <input type="password" id="delibox" placeholder="パスワードを入力..." style="flex: 1;padding: 8px;border: 1px solid #ccc;border-radius: 6px;background: #fff;color: #111;font-size: 0.95rem;"><br><br>
+        <button onclick="moveToPage()" style="padding: 8px 10px;border-radius: 6px;border: 1px solid #bbb;background: #eee;cursor: pointer;font-size: 0.95rem;">ファイル/URLを検索する</button><br><br>
+        </div>
+        <a href="#" id="mv2"><img src="./trademark.png" style="width: 50vw; display:none;  max-width: 850px;" id="mv21" alt="ファイルが見つかりました!"></a>
+       <p><small>Rev.2.0/Made by Y.Yokoha</small></p>
       </article>
         <h2>Latest News! / お知らせ掲示板!</h2>
- <article class="S">
-        <h2>Contents Delivery機能改善について</h2>
-        <p>検索システムの補強(内部のみ)を行います。<br>検索機能に影響のない範囲でのメンテナンスを予定していますが、もしかする動かなくなることがあったりなかったりするのでご容赦ください。</p>
+
+  <article class="S">
+        <h2>Contents Delivery機能改善メンテナンス完了</h2>
+        <p>検索システムの補強を行いました。<br>割とあっさり終わりました。また、動作に支障がないことも確認いたしました。</p>
     <p><small>2025/10/23</small></p>
       </article>
+
+ <article class="S">
+        <h2>Contents Delivery機能改善について</h2>
+        <p>検索システムの補強(内部のみ)を行います。<br>検索機能に影響のない範囲でのメンテナンスを予定していますが、もしかすると動かなくなることがあったりなかったりするのでご容赦ください。</p>
+    <p><small>2025/10/23(編集済み)</small></p>
+      </article>
+
  <article class="V">
         <h2>イラストトレース/映像作品用無料3D素材配布開始!</h2>
         <p>配布サイトYOKONOHAにて、新たに3Dモデルデータの取り扱いを始めました！<br>配布形式はglbファイルです。ご自身の作品等にお役立てください!</p>
     <p><small>2025/10/18</small></p>
       </article>
-
 
  <article class="N">
         <h2>[予告] CaffeineApps臨時メンテナンスのお知らせ</h2>
@@ -95,17 +105,18 @@
       <div class="sidebar-box">
         <img src="./trademark.png" alt="横茶横葉のロゴ" style="width: 60%;">
         <h3>プロフィール</h3>
-        <p>スマホが好きないろんなことをする一般人。
+        <p><ruby>横茶横葉<rt>よこちゃよこは</rt></ruby><br>
+        とにかくスマホが大好きな、いろんなことをする普通の人。よく秋葉原電気街にスマホを漁りに行く人。
 </p>
 
       </div>
       <div class="sidebar-box">
         <h3>このサイトについて</h3>
-        <p>このサイトは、横茶横葉のサイト1 です。メンテナンス中でもこのサイトは常時アクセス可能です。</p>
+        <p>このサイトは、横茶横葉のサイト です。他のサイトがメンテナンス中でもこのサイトは常時アクセス可能です。</p>
             <p>関連:統合配布サイトYOKONOHA↓</p>
         <a href="https://yokonoha.pages.dev">Link to the site(Preparing...)</a>
         <h3>サイトバージョン</h3>
-            <button onclick="admindiv()" style="background-color: white;">Rev.9.0 (Last Modified:2025/10/20)</button>
+            <button onclick="admindiv()" style="background-color: white;">Rev.10.0 (Last Modified:2025/10/23)</button>
     <div class="F" id="hd" style="display:none;">
       <h3>管理者向け操作画面</h3>
       <input type="text" id="searchQuery" placeholder="Type an AdminPass">
