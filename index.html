@@ -15,7 +15,7 @@
   <title>横茶横葉のサイト - Y.Yokoha(Yokocha Yokoha)'s Site | The Main Site of 横茶横葉</title>
     <meta name="description" content="横茶横葉のサイトへようこそ! ここは横茶横葉のサイト、題して「横茶横葉のサイト」です。 横茶横葉からファイルを受け取りたい方はContents Delivery機能をご利用いただけます。">
     <meta name="keywords" content="横茶横葉, サイト, お知らせ, 最新情報">
-<meta name="system-status" content="横茶横葉のサイト-大幅メンテナンス中 開放中" data-detail="こちらは、横茶横葉のサイトより受信したメッセージです。 || メンテナンス:実施中-サイトデザイン変更作業 || サイト内スクリプト: 異常報告無し || Contents Delivery システムステータス: 受付中 || アクセス障害履歴(Weekly): 無し">
+<meta name="system-status" content="横茶横葉のサイト-メンテナンス終了中 開放中" data-detail="こちらは、横茶横葉のサイトより受信したメッセージです。 || メンテナンス:最終確認中 || サイト内スクリプト: 異常報告無し || Contents Delivery システムステータス: 受付中 || アクセス障害履歴(Weekly): 無し">
     <link rel="stylesheet" href="fsoverride.css">
 </head>
 <style>
@@ -53,7 +53,7 @@ header{
 
   <main class="container">
     <section class="main">
-       <div class="F">
+       <div class="F" id="cntd">
         <p>横茶横葉からパスワードを貰った方はコチラへ↓</p>
         <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span style="color:white;"><small>ファイルロッカー検索システム</small></span></h2>
         <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力すると、預かっているファイル/URLを探してきてくれます。</p>
@@ -64,7 +64,7 @@ header{
         <a href="#" id="mv2"><img src="./trademark.png" style="width: 50vw; display:none;  max-width: 850px;" id="mv21" alt="ファイルが見つかりました!"></a>
        <p><small>Rev.2.5</small></p>
       </div>
-      <h2>New Topics! (試験的)</h2>
+      <h2>New Topics!</h2>
       <div style="display: grid; grid-template-columns: 1fr 1fr;grid-template-rows: auto; ">
       <a href="https://ext.seiga.nicovideo.jp/seiga/im11689354"><img src="./sgn_exclude.png" style="width: 20%; position: absolute;"><img src="./szkprm.png" style="width: 100%;" alt="雫立ち絵(利用規約対象外コンテンツ)"></a>
       <a href="https://yokonoha.pages.dev"><img src="./yknhprm.png" style="width: 100%;" alt="YOKONOHA紹介"></a>
@@ -96,7 +96,7 @@ header{
         <p><small>2025/12/01 (もう2025年も、終わりが近いですね...)</small></p>
       </div>
 <div class="Z">
-        <h2>MIDORIha→YOKONOHAへの統合決定!</h2>
+        <h2>統合のお知らせ</h2>
         <p>主路線から外れて別路線で行っていた一次創作イラストプロジェクトですが、この度YOKONOHAへの再統合が決定しました。統合する理由は、サイトコンテンツの充実化を図るためです!</p>
       <p>今後は完全にYOKONOHAへ機能が移行される予定ですので、1サイトで完結するようになります〜<br>これに伴い、YOKONOHAは一部メンテナンス作業を行います。詳細はメンテナンスルームにて確認できます。</p>
 <a href="./status/index.html">サービスシステムモニター - 横茶横葉のサイトメンテナンスルーム</a>
@@ -111,17 +111,29 @@ header{
     <div class="sidebar">
       <div class="sidebar-box">
         <img src="./trademark.png" alt="横茶横葉のロゴ" style="width: 60%;">
-        <a href="./about.html">当サイト・管理人について</a>
+        <br><a href="./about.html">当サイト・管理人について(別ページ)</a>
 
       </div>
       <div class="sidebar-box">
-        <h3>このサイトについて</h3>
+                <h3>このサイトについて</h3>
         <p>このサイトは、横茶横葉のサイト です。<br>他のサイトがメンテナンス中でもこのサイトは常時アクセス可能です。</p>
+        <p>また、当サイトはリンクフリーです。もしよろしければ以下のバナーをお使いください。</p>
+        <img src="./yokohabanner.png" style="width: 100%;" alt="横茶横葉のサイトバナー(通常版)"><br>
+        <p id="hinaentry" ><u style="color: rgb(95, 113, 191);">他のバナーが欲しい方</u></p><br>
+        <script>
+          document.getElementById("hinaentry").addEventListener("click",()=>{
+            alert("おまけとしてサイトキャラクター版もご用意しました。ご利用になりたい方はContents Deliveryにて hinabannersA と入力してみてください。\n\n(※当コンテンツは二次創作の成果物ではないため、readmeファイルは付属しません。そのため、横茶横葉のコンテンツ利用規約が適用されます。)");
+            window.location.href="#cntd";
+          });
+        </script>
             <p>関連:統合配布サイトYOKONOHA↓</p>
         <a href="https://yokonoha.pages.dev">Link to the site(Preparing...)</a>
             <p>SNS</p>
             <a href="https://x.com/yokocha_yokoha">https://x.com/yokocha_yokoha</a>
-        <h3>サイトシステムバージョン</h3>
+        
+      </div>
+      <div class="sidebar-box">
+            <h3>サイトシステムバージョン</h3>
             <button onclick="admindiv()" style="background-color: white;">Rev.12.0 (Last Modified:2025/12/06)</button>
     <div class="F" id="hd" style="display:none;">
       <h3>管理者向け操作画面</h3>
