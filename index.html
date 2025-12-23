@@ -54,34 +54,49 @@ header{
   .visible {
       display: block;
   }
+  .hideall{
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    background-color: #111;
+  }
+  .hd{
+    display: none;
+  }
 </style>
 <body>
 
   <header>
-    <div class="logo" style="user-select: none; justify-content: left; display: flex; align-items: center;" id="gohome"><img src="./trademark.png" style="width: 15%;">横茶横葉のサイト!</div>
+    <div class="logo" style="user-select: none; justify-content: left; display: flex; align-items: center;" id="gohome"><img src="./trademark.png" style="width: 15%;">横茶横葉のサイト</div>
     <nav>
-      <a href="https://yokonoha.pages.dev">統合サイトYOKONOHA</a>
-      <a href="https://yokonoha.github.io/readme">利用規約/Terms of use</a>
+      <a href="https://yokonoha.pages.dev" class="hd1" id="hd1">統合サイトYOKONOHA</a>
+      <a href="https://yokonoha.github.io/readme" class="hd2" id="hd2">利用規約/Terms of use</a>
     </nav>
   </header>
 
+
+  <div class="hideall" id="cdhide"></div>
   <main class="container">
     <section class="main">
-       <div class="F" id="cntd">
+       <div class="F" id="cntd" style="z-index: 1000;">
+        <a href="./index.html" class="hd" id="hd3">ボタンが見切れてしまう場合はここをクリック</a>
         <p>横茶横葉からパスワードを貰った方はコチラへ↓</p>
-        <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span style="color:white;"><small>ファイルロッカー検索システム</small></span></h2>
+        <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span style="color:white;"><small>ファイルロッカー検索</small></span></h2>
         <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力すると、預かっているファイル/URLを探してきてくれます。</p>
         <div style="display: flex;">
         <input type="password" id="delibox" placeholder="パスワードを入力..." style="flex: 1;padding: 8px;border: 1px solid #ccc;border-radius: 6px;background: #fff;color: #111;font-size: 0.95rem;"><br><br>
         <button onclick="moveToPage()" style="padding: 8px 10px;border-radius: 6px;border: 1px solid #bbb;background: #eee;cursor: pointer;font-size: 0.95rem;">ファイル/URLを検索する</button><br><br>
         </div>
         <a href="#" id="mv2"><img src="./trademark.png" style="width: 50vw; display:none;  max-width: 850px;" id="mv21" alt="ファイルが見つかりました!"></a>
-       <p><small>Rev.2.5</small></p>
+       <p><small>Rev.2.6</small></p>
+       <a href="./index.html" class="hd" id="hd">当サイトを閲覧</a>
       </div>
       <h2>New Topics!</h2>
       <div style="display: grid; grid-template-columns: 1fr 1fr;grid-template-rows: auto; ">
       <a href="https://ext.seiga.nicovideo.jp/seiga/im11689354"><img src="./sgn_exclude.png" style="width: 20%; position: absolute;"><img src="./szkprm.png" style="width: 100%;" alt="雫立ち絵(利用規約対象外コンテンツ)"></a>
-      <a href="#"><img src="./sgn_exclude.png" style="width: 20%; position: absolute;"><img src="./newtatichieprm.png" style="width: 100%;" alt="新立ち絵素材配信予告"></a>
+      <a href="#"><img src="./sgn_exclude.png" style="width: 20%; position: absolute;"><img src="./ykrnew.png" style="width: 100%;" alt="新立ち絵素材配信予告"></a>
     </div>      
         <h2>Latest News!</h2>
 
@@ -331,6 +346,25 @@ header{
 </footer>
 
 </body>
+  <script>
+  
+    const p = new URLSearchParams(location.search);
+    if (p.get('cdusr') === '1') {
+      document.getElementById("cdhide").style.display="block";
+      document.getElementById("hd").style.display="block";
+      document.body.style.overflow = 'hidden';
+      document.getElementById("cntd").style.position="absolute";
+      document.getElementById("cntd").style.overflowY="scroll";
+      document.getElementById("cntd").style.maxHeight="50vh";
+      document.getElementById("hd1").style.display="none";
+      document.getElementById("hd2").style.display="none";
+      document.getElementById("hd3").style.display="block";
+  }
+
+  document.getElementById("gohome").addEventListener("click",()=>{
+    window.location.href="https://yokonoha.github.io";
+  });
+  </script>
 <script src="./acnt.js"></script><!--Admin Controler-->
 <script src="timesysre.js"></script>
 <script src="./aclsys.js"></script>
