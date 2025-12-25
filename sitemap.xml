@@ -9,28 +9,9 @@
   <changefreq>daily</changefreq>
 </url>
   <url>
-  <loc>https://yokonoha.github.io/yokoha-st</loc>
+  <loc>https://yokonoha.github.io/status/index.html</loc>
   <priority>0.2</priority>
   <lastmod>2025-03-03T16:23:58+09:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-  <url>
-  <loc>https://yokonoha.github.io/beta</loc>
-  <priority>0.9</priority>
-  <lastmod>2024-09-05T22:03:28+09:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-  
-  <url>
-  <loc>https://yokonoha.github.io/Caffeine_Music</loc>
-  <priority>0.6</priority>
-  <lastmod>2025-02-01T22:03:28+09:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-  <url>
-  <loc>https://yokonoha.github.io/Caffeine_Movie</loc>
-  <priority>0.6</priority>
-  <lastmod>2025-02-01T22:03:28+09:00</lastmod>
   <changefreq>daily</changefreq>
 </url>
 </urlset>
