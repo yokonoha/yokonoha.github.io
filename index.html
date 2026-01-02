@@ -99,7 +99,62 @@ header{
       <a href="https://ext.seiga.nicovideo.jp/seiga/im11720358"><img src="./sgn_exclude.png" style="width: 20%; position: absolute;"><img src="./ykrnew.png" style="width: 100%;" alt="新立ち絵素材配信中(結月ゆかり立ち絵素材)"></a>
     </div>      
         <h2>Latest News!</h2>
- 
+
+<div class="G">
+      <div id="omikuji-root" style="text-align: center; padding: 40px; border: 8px solid #ffffff; border-radius: 5px; max-width: 350px; margin: 20px auto;  font-family: 'Hiragino Mincho ProN', serif;">
+    
+    <div style="font-size: 1.5rem; color: #d81b1b;  font-weight: bold; margin-bottom: 20px;">
+        横茶横葉のサイト<br> 新年おみくじボックス
+    </div>
+
+    <div id="display" style="background: #fff; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: #63d32f; border-radius: 10px; margin-bottom: 25px; ">
+        おみくじ
+    </div>
+
+    <button id="draw-button" onclick="startOmikuji()" style=" color: #352828; border: 2px solid #00ffd5; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer;  transition: 0.1s; background-color: wheat;">
+        おみくじを引く
+    </button>
+
+    <script>
+        function startOmikuji() {
+       
+            const results = ["大吉", "中吉", "小吉", "吉", "末吉", "凶","大吉", "中吉", "小吉", "吉"];
+            const display = document.getElementById('display');
+            const button = document.getElementById('draw-button');
+             display.style.color = "#63d32f";
+            button.disabled = true;
+            button.style.opacity = "0.5";
+            button.innerText = "お待ちください...";
+
+            let count = 0;
+            const shuffleSpeed = 80;
+            const totalSteps = 25;
+
+            const timer = setInterval(() => {
+                const randomTemp = results[Math.floor(Math.random() * results.length)];
+                display.innerText = randomTemp;
+                display.style.transform = `scale(${1 + Math.random() * 0.1})`;
+                count++;
+
+                if (count >= totalSteps) {
+                    clearInterval(timer);
+                    
+                    const finalResult = results[Math.floor(Math.random() * results.length)];
+                    display.innerText = finalResult;
+                    display.style.transform = "scale(1.2)";
+                    display.style.color = finalResult === "大吉" ? "#ff0000" : "#d32f2f";
+                    display.style.textShadow = "0 0 10px rgba(255,215,0,0.8)";
+                    
+                    button.disabled = false;
+                    button.style.opacity = "1";
+                    button.innerText = "もう一度引く";
+                }
+            }, shuffleSpeed);
+        }
+    </script>
+</div>
+</div>
+          
         <div class="N">
         <h2>About social media</h2>
               <p>If you're interested in checking out my latest software, you can find it on my new X account below!</p>
