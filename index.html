@@ -71,7 +71,7 @@ header{
   <header>
     <div class="logo" style="user-select: none; justify-content: left; display: flex; align-items: center;" id="gohome"><img src="./trademark.png" style="width: 15%;">横茶横葉のサイト</div>
     <nav>
-      <a href="https://yokonoha.pages.dev" class="hd1" id="hd1">統合サイトYOKONOHA</a>
+      <!--<a href="https://yokonoha.pages.dev" class="hd1" id="hd1">統合サイトYOKONOHA</a>-->
       <a href="https://yokonoha.github.io/readme" class="hd2" id="hd2">利用規約/Terms of use</a>
     </nav>
   </header>
@@ -101,58 +101,9 @@ header{
         <h2>Latest News!</h2>
 
 <div class="G">
-      <div id="omikuji-root" style="text-align: center; padding: 40px; border: 8px solid #ffffff; border-radius: 5px; max-width: 350px; margin: 20px auto;  font-family: 'Hiragino Mincho ProN', serif;">
-    
-    <div style="font-size: 1.5rem; color: #d81b1b;  font-weight: bold; margin-bottom: 20px;">
-        横茶横葉のサイト<br> 新年おみくじボックス
-    </div>
-
-    <div id="display" style="background: #fff; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: #63d32f; border-radius: 10px; margin-bottom: 25px; ">
-        おみくじ
-    </div>
-
-    <button id="draw-button" onclick="startOmikuji()" style=" color: #352828; border: 2px solid #00ffd5; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 5px; cursor: pointer;  transition: 0.1s; background-color: wheat;">
-        おみくじを引く
-    </button>
-
-    <script>
-        function startOmikuji() {
-       
-            const results = ["大吉", "中吉", "小吉", "吉", "末吉", "凶","大吉", "中吉", "小吉", "吉"];
-            const display = document.getElementById('display');
-            const button = document.getElementById('draw-button');
-             display.style.color = "#63d32f";
-            button.disabled = true;
-            button.style.opacity = "0.5";
-            button.innerText = "お待ちください...";
-
-            let count = 0;
-            const shuffleSpeed = 80;
-            const totalSteps = 25;
-
-            const timer = setInterval(() => {
-                const randomTemp = results[Math.floor(Math.random() * results.length)];
-                display.innerText = randomTemp;
-                display.style.transform = `scale(${1 + Math.random() * 0.1})`;
-                count++;
-
-                if (count >= totalSteps) {
-                    clearInterval(timer);
-                    
-                    const finalResult = results[Math.floor(Math.random() * results.length)];
-                    display.innerText = finalResult;
-                    display.style.transform = "scale(1.2)";
-                    display.style.color = finalResult === "大吉" ? "#ff0000" : "#d32f2f";
-                    display.style.textShadow = "0 0 10px rgba(255,215,0,0.8)";
-                    
-                    button.disabled = false;
-                    button.style.opacity = "1";
-                    button.innerText = "もう一度引く";
-                }
-            }, shuffleSpeed);
-        }
-    </script>
-</div>
+<h2>YOKONOHA休業について</h2>
+<p>横茶横葉の私生活がこれまで以上に忙しくなってしまい、サイト管理が出来なくなってしまったため、規模縮小のために一時的にYOKONOHAを閉鎖しました。<br>今後また暇が出来るまでの当面の間はこのサイトにコンテンツを集約して続行する予定です。</p>
+        <p><small>2026/1/7 (HappyNewYear!)</small></p>
 </div>
           
         <div class="N">
@@ -279,10 +230,6 @@ header{
             window.location.href="#cntd";
           });
         </script>
-            <p>関連:統合配布サイトYOKONOHA↓</p>
-        <a href="https://yokonoha.pages.dev">Link to the site(Preparing...)</a>
-            <p>SNS</p>
-            <a href="https://x.com/yokocha_yokoha">https://x.com/yokocha_yokoha</a>
         
       </div>
       <div class="sidebar-box">
@@ -300,7 +247,7 @@ header{
 <a href="https://x.com/yokocha_yokoha"><img src="./mbnr (2).png" style="width:29vw; max-width:150px;" alt="SNSバナー" id="clk"></a>
 <!--<a href="https://hina-yokoi.pages.dev"><img src="./mbnr (3).png" style="width:29vw; max-width:150px;" alt="陽菜" id="clk"></a>-->
 <a href="https://ext.seiga.nicovideo.jp/user/illust/141983572"><img src="./mbnr (1).png" style="width:29vw; max-width:150px;" alt="立ち絵素材系" id="clk"></a>
-<a href="https://yokonoha.pages.dev"><img src="./mbr.png" style="width:29vw; max-width:150px;" alt="YOKONOHA" id="clk"></a>
+<!--<a href="https://yokonoha.pages.dev"><img src="./mbr.png" style="width:29vw; max-width:150px;" alt="YOKONOHA" id="clk"></a>-->
 </div>
       <div class="sidebar-box">
        <p> ローカル時刻 by <a href="https://github.com/yokonoha/timesysre">TimesysRe</a></p>
@@ -326,10 +273,10 @@ header{
             <p><small>2025/07/05(編集済み)</small></p>
         </div>
       <div class="sidebar-box">
-        <p>主張の激しい表示板(テスト中)</p>
+        <h3>Latest Highlights</h3>
          <div id="text-container">
-        <div id="text1" class="text">横茶</div>
-        <div id="text2" class="text">横葉</div>
+        <div id="text1" class="text">YOKONOHA</div>
+        <div id="text2" class="text">長期休止中</div>
 
     </div>
 
