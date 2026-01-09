@@ -9,7 +9,7 @@ async function updateStatus() {
 
     try {
         
-        const response = await fetch('./mockstatus.json?t=' + Date.now());
+        const response = await fetch('./status/status.json?t=' + Date.now());
         const data = await response.json();
         
 
