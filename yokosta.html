@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOKOSTA | 横茶横葉スタジオサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --primary-color: #1a2b4e;
+            --accent-color: #c5a059;
+            --bg-light: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+        }
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { font-size: 0.8rem; color: #666; font-weight: normal; margin-top: 5px;}
+        
+        nav ul { display: flex; gap: 30px; }
+        nav li a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+        nav li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--accent-color);
+            transition: 0.3s;
+        }
+        nav li a:hover::after { width: 100%; }
+
+        .reserve-btn-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+        }
+        .reserve-btn-header:hover { opacity: 0.8; }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./bkday.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        .hero-text {
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+
+        .cd-bar {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            width: 90%;
+            max-width: 1100px;
+            padding: 20px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            z-index: 10;
+        }
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background: #fff;
+        }
+        .search-btn {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            min-width: 150px;
+        }
+        .search-btn:hover { background: #b08d4b; }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .concept-inner {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .concept-text { flex: 1; }
+        .concept-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .concept-img {
+            flex: 1;
+            box-shadow: 20px 20px 0 var(--bg-light), 20px 20px 0 2px var(--accent-color);
+        }
+
+        .spaces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .room-card {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .room-card:hover { transform: translateY(-5px); }
+        .room-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .room-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .room-card:hover .room-img img { transform: scale(1.05); }
+        .room-info { padding: 20px; }
+        .room-info h4 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .room-info p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .room-pr {
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .room-pr span { font-size: 0.8rem; font-weight: normal; }
+
+        .news-list {
+            border-top: 1px solid #eee;
+        }
+        .news-item {
+            display: flex;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            align-items: baseline;
+            transition: 0.3s;
+        }
+        .news-item:hover { background: #fdfdfd; padding-left: 10px; }
+        .news-date {
+            font-size: 0.8rem;
+            color: #888;
+            width: 100px;
+            flex-shrink: 0;
+        }
+        .news-cat {
+            font-size: 0.7rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 3px 8px;
+            margin-right: 15px;
+            border-radius: 2px;
+            text-wrap: nowrap;
+        }
+        .news-title {
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 60px 20px 20px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-info h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .footer-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        .footer-links ul { display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { font-size: 0.9rem; opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; text-decoration: underline; }
+        
+        .copyright {
+            text-align: center;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem; }
+            .cd-bar {
+                flex-direction: column;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                width: 100%;
+                margin-top: -50px;
+                gap: 15px;
+            }
+            .concept-inner { flex-direction: column; }
+            .header-inner { padding: 15px 20px; }
+            nav { display: none; }
+            .search-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo" style="text-wrap: nowrap;">
+                YOKOSTA <span>Y.Yokoha</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://yokonoha.pages.dev">YOKONOHA</a></li>
+                    <li><a href="./readme.html">Terms of Use</a></li>
+                    <li><a href="#news">Information</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <div class="hero">
+
+        
+        <div class="cd-bar">
+        <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span style="color: #111;"><small>ファイルロッカー検索</small></span></h2>
+        <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力して下さい。</p>
+        <div style="display: flex;">
+        <input type="password" id="delibox" placeholder="パスワードを入力" style="flex: 1;padding: 8px;border: 1px solid #ccc;border-radius: 6px;background: #fff;color: #111;font-size: 0.95rem;"><br><br>
+        <button onclick="moveToPage()" class="reserve-btn-header" style="padding: 8px 10px;border-radius: 6px;font-size: 0.95rem; text-wrap: nowrap;">送信</button><br><br>
+        </div>
+        <a href="#" id="mv2"><img src="./trademark.png" style="width: 50vw; display:none;  max-width: 850px;" id="mv21" alt="ファイルが見つかりました!"></a>
+       <p><small>Rev.2.6</small></p>
+
+        </div>
+    </div>
+
+    <section id="concept">
+        <div class="section-title">
+            <span>Latest News</span>
+            <h2>最新の情報一覧</h2>
+        </div>
+
+    </section>
+
+
+        
+    </section>
+
+<section id="lounge" style="
+    max-width: 100%; 
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./scst.png') center/cover fixed;
+">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 0.1em;">
+            The personal main site
+        </h2>
+        <p style="font-size: 1rem; line-height: 2; margin-bottom: 30px;">
+            以前のサイトに戻るには下のボタンを押して下さい。<br>
+            
+        </p>
+        <a href="./index.html" style="
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 12px 40px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        " onmouseover="this.style.background='#fff'; this.style.color='#1a2b4e'" onmouseout="this.style.background='transparent'; this.style.color='#fff'">
+            サイトへ戻る
+        </a>
+    </div>
+</section>
+    <section id="news">
+        <div class="section-title">
+            <span>Information</span>
+            <h2>お知らせ</h2>
+        </div>
+        <div class="news-list">
+            <a href="#" class="news-item">
+                <div class="news-date">2026.01.09</div>
+                <div class="news-cat">重要</div>
+                <div class="news-title">横茶横葉のサイト,YOKONOHAよりコンテンツを移行しています。</div>
+            </a>
+            <a href="#" class="news-item">
+                <div class="news-date">2026.01.09</div>
+                <div class="news-cat">その他</div>
+                <div class="news-title">サイトの新設を行いました。</div>
+            </a>
+            <a href="#" class="news-item">
+                <div class="news-date">2026.01.08</div>
+                <div class="news-cat">重要</div>
+                <div class="news-title">ソフトウェア配布サイトYOKONOHA長期休業のお知らせ</div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h2>YOKOSTA<span style="font-size: 0.8rem; font-weight: normal; margin-top: 5px;">Y.Yokoha</span></s></h2>
+                <p>https://yokonoha.github.io</p>
+                <p>SNS: @yokocha_yokoha</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="./status/index.html">サーバー監視システム</a></li>
+                    <li><a href="https://github.com/yokonoha">リポジトリ</a></li>
+                    <li><a href="https://yokonoha.pages.dev">YOKONOHA</a></li>
+                    <li><a href="./about.html">管理者について</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="./readme.html">利用規約(Terms of Use)</a></li>
+                    <li><a href="./sitemap.html">サイトマップ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 YokochaYokoha (Y.Yokoha) All Rights Reserved.
+        </div>
+    </footer>
+</body>
+<script src="./dcs.js"></script>
+<script src="./delivery.js"></script>
+<script src="./statuschkworker.js"></script>
+</html>

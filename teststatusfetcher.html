@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ステータスチェック</title>
+</head>
+<body>
+
+
+    <div class="site-row">
+        <img id="status-0" src="" width="20"> <span id="name-0">待機中...</span>
+    </div>
+    <div class="site-row">
+        <img id="status-1" src="" width="20"> <span id="name-1">待機中...</span>
+    </div>
+    <div class="site-row">
+        <img id="status-2" src="" width="20"> <span id="name-2">待機中...</span>
+    </div>
+    <div class="site-row">
+        <img id="status-3" src="" width="20"> <span id="name-3">待機中...</span>
+    </div>
+    <div class="site-row">
+        <img id="status-4" src="" width="20"> <span id="name-4">待機中...</span>
+    </div>
+
+    <script>
+async function updateStatus() {
+    
+    const IMG_PATH = {
+        ok: './imgs/koumokugreen.png',
+        warn: './imgs/koumokuorange.png',
+        error: './imgs/koumored.png'
+    };
+
+    try {
+        
+        const response = await fetch('./mockstatus.json?t=' + Date.now());
+        const data = await response.json();
+        
+
+        const sitesObj = data.sites;
+        const siteNames = Object.keys(sitesObj);
+
+      
+
+        for (let i = 0; i < 5; i++) {
+            const imgTag = document.getElementById(`status-${i}`);
+            const nameTag = document.getElementById(`name-${i}`);
+            
+            if (siteNames[i]) {
+                const siteName = siteNames[i];
+                const siteData = sitesObj[siteName];
+                const statusText = siteData.status || "";
+
+                nameTag.textContent = siteName;
+
+                if (statusText.includes("異常") || statusText.includes("404")) {
+                    imgTag.src = IMG_PATH.error;
+                } else if (statusText.includes("休業")) {
+                    imgTag.src = IMG_PATH.warn;
+                } else {
+                    imgTag.src = IMG_PATH.ok;
+                }
+                
+                imgTag.style.display = 'inline';
+            } else {
+                nameTag.textContent = "-";
+                imgTag.style.display = 'none';
+            }
+        }
+      
+    } catch (error) {
+        
+        console.error(error);
+    }
+}
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateStatus);
+        } else {
+            updateStatus();
+        }
+    </script>
+</body>
+</html>
