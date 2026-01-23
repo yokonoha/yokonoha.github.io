@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>日本語ボイス文字起こし - YOKOSTA mini Web Apps</title>
+  <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --primary-color: #1a2b4e;
+            --accent-color: #c5a059;
+            --bg-light: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+        }
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { font-size: 0.8rem; color: #666; font-weight: normal; margin-top: 5px;}
+        
+        nav ul { display: flex; gap: 30px; }
+        nav li a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+        nav li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--accent-color);
+            transition: 0.3s;
+        }
+        nav li a:hover::after { width: 100%; }
+
+        .reserve-btn-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+        }
+        .reserve-btn-header:hover { opacity: 0.8; }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./bkday.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        .hero-text {
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+
+        .cd-bar {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            width: 90%;
+            max-width: 1100px;
+            padding: 20px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            z-index: 10;
+        }
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background: #fff;
+        }
+        .search-btn {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            min-width: 150px;
+        }
+        .search-btn:hover { background: #b08d4b; }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .concept-inner {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .concept-text { flex: 1; }
+        .concept-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .concept-img {
+            flex: 1;
+            box-shadow: 20px 20px 0 var(--bg-light), 20px 20px 0 2px var(--accent-color);
+        }
+
+        .spaces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .room-card {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .room-card:hover { transform: translateY(-5px); }
+        .room-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .room-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .room-card:hover .room-img img { transform: scale(1.05); }
+        .room-info { padding: 20px; }
+        .room-info h4 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .room-info p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .room-pr {
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .room-pr span { font-size: 0.8rem; font-weight: normal; }
+
+        .news-list {
+            border-top: 1px solid #eee;
+        }
+        .news-item {
+            display: flex;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            align-items: baseline;
+            transition: 0.3s;
+        }
+        .news-item:hover { background: #fdfdfd; padding-left: 10px; }
+        .news-date {
+            font-size: 0.8rem;
+            color: #888;
+            width: 100px;
+            flex-shrink: 0;
+        }
+        .news-cat {
+            font-size: 0.7rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 3px 8px;
+            margin-right: 15px;
+            border-radius: 2px;
+            text-wrap: nowrap;
+        }
+        .news-title {
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 60px 20px 20px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-info h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .footer-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        .footer-links ul { display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { font-size: 0.9rem; opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; text-decoration: underline; }
+        
+        .copyright {
+            text-align: center;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem; }
+            .cd-bar {
+                flex-direction: column;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                width: 100%;
+                margin-top: -50px;
+                gap: 15px;
+            }
+            .concept-inner { flex-direction: column; }
+            .header-inner { padding: 15px 20px; }
+            nav { display: none; }
+            .search-btn { width: 100%; }
+        }
+        #memo-area { width: 100%; height: 200px; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .controls { display: flex; gap: 10px; margin-bottom: 10px; }
+        #status { color: #666; font-size: 0.9em; }
+        .recording { color: red; font-weight: bold; }
+  </style>
+<body>
+      <header>
+        <div class="header-inner">
+            <a href="https://yokonoha.github.io/yokosta" class="logo" style="text-wrap: nowrap;">
+                YOKOSTA <span>mini WebApps</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://yokonoha.github.io/yokosta">Main</a></li>
+                    <li><a href="https://yokonoha.pages.dev">YOKONOHA</a></li>
+                    <li><a href="./readme.html">Terms of Use</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+        <section id="concept"><div class="news-cat">Webアプリ</div>
+        <div class="section-title">
+          
+            <span>DICTATION</span>
+            <h2>日本語ボイス文字起こし</h2>
+          </div>
+           <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; text-align: center;">
+            <p>端末のマイクに向かって発話すると、音声を文字起こしできます。<br>音声入力や議事録作成などにご活用いただけます。</p>
+            <br>
+            <p><small>※プライバシーに関して<br>本機能ではブラウザ標準の音声認識システムを使用します。OSやブラウザの設定により、音声データが解析のためクラウドへ送信される場合があります。あらかじめご了承の上、ご利用ください。</small></p><br>
+
+           </div>
+    <div class="controls">
+        <button id="start-btn" class="reserve-btn-header">録音開始</button>
+        <button id="stop-btn" disabled class="reserve-btn-header">停止</button>
+        <button id="clear-btn" class="reserve-btn-header">記録を削除</button>
+    </div>
+
+    <div id="status">ボタンを押して話してください</div>
+    <textarea id="memo-area" placeholder="文字起こしを開始すると、こちらに結果が表示されます。"></textarea>
+    <div class="controls">
+        <button id="copy-btn" class="reserve-btn-header">コピー</button>
+        <button id="download-btn" class="reserve-btn-header">保存</button>
+    </div>
+    <a href="https://yokonoha.github.io/readme.html"><u>利用規約/Terms of Use</u></a>
+    </section>
+    
+</body>
+    <script>
+        const beginbtn = document.getElementById('start-btn');
+        const stpbtn = document.getElementById('stop-btn');
+        const delbtn = document.getElementById('clear-btn');
+        const textarea1 = document.getElementById('memo-area');
+        const statdsp = document.getElementById('status');
+        let isEndedcorrectly = false;
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        
+        if (!SpeechRecognition) {
+            alert("お使いのブラウザは音声認識に対応していません。最新のモダンなブラウザをお使いください。");
+        } else {
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'ja-JP';
+            recognition.interimResults = true;
+            recognition.continuous = true;
+
+            beginbtn.onclick = () => {
+                isEndedcorrectly = false;
+                recognition.start();
+                beginbtn.disabled = true;
+                stpbtn.disabled = false;
+                statdsp.textContent = "聞き取って書き起こしています...";
+                statdsp.classList.add("recording");
+            };
+
+            stpbtn.onclick = () => {
+                isEndedcorrectly = true;
+                recognition.stop();
+                beginbtn.disabled = false;
+                stpbtn.disabled = true;
+                statdsp.textContent = "停止しました。";
+                statdsp.classList.remove("recording");
+            };
+
+            recognition.onresult = (event) => {
+                let finalTranscript = '';
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    const transcript = event.results[i][0].transcript;
+                    if (event.results[i].isFinal) {
+                        textarea1.value += transcript + "\n";
+                    }
+                }
+            };
+
+            delbtn.onclick = () => {
+                textarea1.value = "";
+            };
+
+            recognition.onend = () => {
+                if (!isEndedcorrectly) {
+                    recognition.start();
+                }
+                    }
+                  }
+            const downloadBtn = document.getElementById('download-btn');
+
+            downloadBtn.onclick = () => {
+                const text = textarea1.value;
+                if (!text) {
+                    alert("保存する内容がありません。");
+                    return;
+                }
+
+                const blob = new Blob([text], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                a.href = url;
+                a.download = `YOKOSTA_dictation_${timestamp}.txt`;
+                a.click();
+                
+                URL.revokeObjectURL(url);
+            };
+            const cpybtn = document.getElementById('copy-btn');
+
+            cpybtn.onclick = async () => {
+                const text = textarea1.value;
+                
+                if (!text) {
+                    alert("コピーする内容がありません。");
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const cpytaisyou = cpybtn.textContent;
+                    cpybtn.textContent = "クリップボードにコピーしました。";
+                    cpybtn.classList.add("success");
+
+                    setTimeout(() => {
+                        cpybtn.textContent = cpytaisyou;
+                        cpybtn.classList.remove("success");
+                    }, 2000);
+                } catch (err) {
+                    console.error("YOKOHA ERR UNABLE2CPY:", err);
+                    alert("コピーに失敗しました。最新でモダンなブラウザをお使い下さい...。");
+                }
+            };
+    </script>
+</html>
