@@ -186,9 +186,22 @@ header{
             <p>如果您正在寻找我的使用条款，您可以在本页底部找到它们。</p>  
             <p><small>2025/07/05(編集済み)</small></p>
         </div>
+<div id="ua-board" class="sidebar-box">
+    <div style="font-weight: bold; margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px;">
+        お使いのブラウザのユーザーエージェント
+    </div>
+    <div id="ua-content">検査中...</div>
+</div>
+
+<script>
+    (function() {
+        const ua = navigator.userAgent;
+        document.getElementById('ua-content').textContent = ua;
+    })();
+</script>
         <div class="sidebar-box">
                <h2><ruby>横茶横葉<rt>よこちゃよこは</rt></ruby>/<ruby>Y.Yokoha<rt>YokochaYokoha</rt></ruby></h2>
-    <p>2018年からフリーソフトウェア・アプリ開発活動を始め、現在では3Dモデルやイラスト、動画制作、サイトデザイン、Webアプリ開発などジャンルにとらわれず多方面のデジタル創作活動を行っているつもりの単なる一般人。<br>無料・広告なし が横茶横葉の作るサイトの基本理念。<br>特記事項:スマホへの愛は尋常ではない(異常)。一時期は26台ものスマホを所有していたという。</p>
+    <p>フリーソフト・アプリ開発、3Dモデルやイラスト、動画制作、サイトデザイン、Webアプリ開発などを趣味で行っている一般人。<br>無料・広告なし が横茶横葉の作るモノの基本理念。<br>特記事項:スマホへの愛は尋常ではない(異常)。一時期は26台ものスマホを所有していたという。</p>
         </div>
     </div>
     
@@ -198,7 +211,7 @@ header{
       
   <footer>
       <h3>横茶横葉のサイト</h3>
-    <p>&copy; 2025 Y.Yokoha All rights reserved.</p>
+    <p>&copy; 2026 Y.Yokoha All rights reserved.</p>
     <a href="https://yokonoha.github.io/readme"><p>利用規約/Terms of Services</p></a>
     <p><small>Thanks for All Visitors & Contributors!</small></p> 
     <p>このサイトは<a href="https://github.com/yokonoha/FSLinear">FSLinear</a>のスタイルを一部使用しています。</p>
