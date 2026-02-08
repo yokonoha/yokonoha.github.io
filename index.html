@@ -205,8 +205,30 @@ document.getElementById('appendix').textContent = "おや？これは珍しい�
 }
 else if (ua.includes("affeine"))
 {
-document.getElementById('appendix').textContent = "わーい！ReCaffeine系のブラウザですね！使ってくれてありがと〜！";
+document.getElementById('appendix').textContent = "このUAは... 横茶横葉製 ReCaffeine系のブラウザですね！使ってくれてありがと〜！";
 }
+else if (ua.includes("ndroid"))
+{
+document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも管理人の愛するOSから見てくれてるなんて嬉しいです！";
+}
+else if (ua.includes("indows"))
+{
+document.getElementById('appendix').textContent = "PCからの閲覧ありがとうございます!";
+}
+else if (ua.includes("inux"))
+{
+document.getElementById('appendix').textContent = "おや？これは珍しい! このOSはロマンがありますよね〜 いろんなの試したい。";
+}
+else{
+document.getElementById('appendix').textContent = "閲覧ありがとうございます〜";
+
+}
+
+if (ua.includes("bot")||ua.includes("rchive"))
+{
+document.getElementById('appendix').textContent = "あ？えっと、もしかして人間ではなくてボットちゃんかな？こんにちは！当サイト管理人、横茶横葉と申します〜。クローリングご苦労様です。あ、勝手なWebアーカイブへの登録だけはやめてね...私困っちゃいます。";
+}
+
     })();
 </script>
         <div class="sidebar-box">
