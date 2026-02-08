@@ -201,19 +201,31 @@ header{
         document.getElementById('ua-content').textContent = ua;
 if (ua.includes("offee/"))
 {
-document.getElementById('appendix').textContent = "おや？これは珍しいですね、Coffeeブラウザですかぁ。サポートは切れておりますのでご利用はお控えくださいませ!";
+document.getElementById('appendix').textContent = "おや？これは珍しいですね、横茶横葉謹製 Coffeeブラウザですね！ 申し訳ございませんが、公式サポートは切れておりますのでご利用はお控えくださいませ!";
 }
 else if (ua.includes("affeine"))
 {
-document.getElementById('appendix').textContent = "このUAは... 横茶横葉製 ReCaffeine系のブラウザですね！使ってくれてありがと〜！";
+document.getElementById('appendix').textContent = "このUAは... 横茶横葉謹製 ReCaffeine系のブラウザですね！使ってくれてありがと〜！";
+}
+else if (ua.includes("oid.yb"))
+{
+document.getElementById('appendix').textContent = "閲覧ありがとうございます！余計なお世話ですが、お使いのブラウザはwebviewベースで、恐らくファイルのダウンロード機能が不十分..?(2026.2時点)かなと思います〜。(blobタイプのダウンロード不能)ご利用の際はお気をつけて...";
 }
 else if (ua.includes("ndroid"))
 {
-document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも管理人の愛するOSから見てくれてるなんて嬉しいです！";
+document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が最も愛するOSから見てくれてるなんて嬉しいです！";
 }
-else if (ua.includes("indows"))
+else if (ua.includes("iPh"))
+{
+document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　デザインが光る、カッコいいスマホですね！";
+}
+else if (ua.includes("indo"))
 {
 document.getElementById('appendix').textContent = "PCからの閲覧ありがとうございます!";
+}
+else if (ua.includes("ac O"))
+{
+document.getElementById('appendix').textContent = "閲覧頂きありがとうございます！ タブレット..? いや、パソコン..ですか? どちらにしてもステキなデザインのデバイスをお使いなんですね！";
 }
 else if (ua.includes("inux"))
 {
