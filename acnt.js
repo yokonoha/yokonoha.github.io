@@ -20,6 +20,11 @@
                                 var url = "https://caffeineapps." + ur1;
                                 window.location.href = url;
                             }
+                            else if(query=="repo")
+                            {
+                                var url = "https://github.com/yokonoha/yokonoha.github.io";
+                                window.location.href = url;
+                            }
                             else if(query.includes("testing_space"))
                             {
                         var url = "https://yokonoha.github.io/" + query;
