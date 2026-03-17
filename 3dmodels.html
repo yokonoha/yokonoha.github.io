@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3Dモデル素材配布サイト (イラストトレース/映像作品向け) - 横茶横葉のサイト</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<style>
+  :root {
+    --bg-color: #f2e9e4;
+    --main-bg: #ffffff;
+    --accent: #2fa6eb;
+    --text-color: #333333;
+    --border-color: #dddddd;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: var(--text-color);
+  }
+  .header {
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 15px;
+  }
+  .main {
+    width: 95vw;
+    height: 85vh;
+    background-color: var(--main-bg);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  /* 3ペインのスタイル */
+  .pane-left {
+    width: 40%;
+    height: 100%;
+    background-color: #e0e0e0; /* プレビューの背景 */
+    position: relative;
+  }
+  .pane-center {
+    width: 35%;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    overflow-y: auto;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .pane-right {
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  /* model-viewerのスタイル */
+  model-viewer {
+    width: 100%;
+    height: 100%;
+    outline: none;
+  }
+  /* ツリー表示のスタイル */
+  details {
+    margin-bottom: 10px;
+  }
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #eee;
+  }
+  summary:hover {
+    background-color: #f0f0f0;
+  }
+  ul.tree-list {
+    list-style-type: none;
+    padding-left: 15px;
+    margin-top: 5px;
+  }
+  ul.tree-list li {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    font-size: 0.95em;
+    transition: background-color 0.2s;
+  }
+  ul.tree-list li:hover {
+    background-color: #e6f7ff;
+  }
+  ul.tree-list li.active {
+    background-color: #bae0ff;
+    font-weight: bold;
+  }
+  /* 右ペイン内の要素 */
+  h2#detail-title {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+  }
+  .tag.model { background-color: #fff0f6; color: #eb2f96; }
+  .tag.hina { background-color: #fff0f6; color: #2fa6eb; }
+  
+  .variation-box {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .variation-box label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .btn-download {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: auto;
+    background-color: #52c41a;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  .btn-download:hover {
+    background-color: #389e0d;
+  }
+  .terms-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: #187e1d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* スマホ向けメディアクエリ */
+  @media screen and (max-width: 768px) {
+    .main {
+      flex-direction: column;
+      height: auto;
+    }
+    .pane-left {
+      width: 100%;
+      height: 50vh;
+    }
+    .pane-center, .pane-right {
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--border-color);
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h2><img src="https://yokonoha.github.io/imgs/translg.png" alt="横茶横葉のサイトロゴ" style="height: 40px; vertical-align: middle;">
+ 3Dモデル素材集</h2>
+  <p style="margin: 0; font-size: 0.9em; color: #666;">二次利用可能! ガイドラインに従ってご自由にご活用ください。</p>
+</div>
+
+<div class="main">
+  <div class="pane-left">
+    <model-viewer id="viewer" camera-controls auto-rotate shadow-intensity="1" ar></model-viewer>
+  </div>
+
+  <div class="pane-center" id="tree-container">
+    </div>
+
+  <div class="pane-right">
+    <h2 id="detail-title">モデルを選択してください</h2>
+    <div id="detail-tags"></div>
+    <p id="detail-desc" style="font-size: 0.9em; line-height: 1.5;"></p>
+    
+    <div id="variation-container" class="variation-box" style="display: none;">
+      <strong>バリエーション選択:</strong>
+      <div id="variation-radios" style="margin-top: 10px;"></div>
+    </div>
+
+    <div style="margin-top: auto;">
+      <a href="https://yokonoha.pages.dev/3dtou" target="_blank" class="terms-link">3Dモデル利用ガイドラインを読む</a><br>
+      <a id="btn-download" href="#" class="btn-download" download style="display: none; margin-top: 10px;">素材データダウンロード</a>
+      <br>
+      <p><small>※素材データ形式はGLBです。ご活用の際はガイドラインをご確認ください。</small></p>
+    </div>
+  </div>
+  
+
+</div>
+  <footer style="text-align: center; padding: 10px; font-size: 0.8em; color: #999;">
+    &copy; 2026 横茶横葉 All Rights Reserved. | <a href="https://yokonoha.github.io/readme" target="_blank" style="color: #999;">Terms of Services(利用規約)</a> | <a href="https://yokonoha.github.io/" target="_blank" style="color: #999;">横茶横葉のサイト</a>
+    </footer>
+    <script src="./3dsozai.js"></script>
+</body>
+</html>
