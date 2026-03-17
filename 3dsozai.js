@@ -68,6 +68,12 @@ const PREFIX = "https://yokonoha.pages.dev/3d_souko/";
             { label: "雪国仕様", url: PREFIX + "delinatpr_snow.glb" }
           ]
         },
+                {
+          name: "誘導棒(交通整理に使用する赤い棒)",
+          desc: "誘導棒(TrafficWand)です。",
+          tags: [{ class: "model", text: "3Dモデル" }],
+          url: PREFIX + "trafficwand.glb"
+        },
         {
           name: "歩行者・自転車専用信号機",
           desc: "街なかにある歩行者用信号機を3Dにしてみました。意図的に歩行者と自転車の文字表記を入れ替えています。",
@@ -83,6 +89,18 @@ const PREFIX = "https://yokonoha.pages.dev/3d_souko/";
           desc: "都市部で見かけるアーチタイプの信号機です。",
           tags: [{ class: "model", text: "3Dモデル" }],
           url: PREFIX + "trafficlight1.glb"
+        },
+        {
+          name: "ガードレール(三本線パターン)",
+          desc: "シンプルなガードレールです。つなぎ合わせて活用できます。",
+          tags: [{ class: "model", text: "3Dモデル" }],
+          url: PREFIX + "guard1.glb"
+        },
+        {
+          name: "レール",
+          desc: "シンプルな線路用直線レールです。",
+          tags: [{ class: "model", text: "3Dモデル" }],
+          url: PREFIX + "rail1.glb"
         },
         {
           name: "道路(アスファルト路面)",
@@ -141,6 +159,12 @@ const PREFIX = "https://yokonoha.pages.dev/3d_souko/";
           desc: "シンプルなメガネです。",
           tags: [{ class: "model", text: "3Dモデル" }],
           url: PREFIX + "glasses_rectangle_by_Yokoha.glb"
+        },
+        {
+          name: "普通のサッカーボール",
+          desc: "白黒の模様のついた通常のサッカーボールです。",
+          tags: [{ class: "model", text: "3Dモデル" }],
+          url: PREFIX + "soccerball.glb"
         },
         {
           name: "一般的なスタイラスペン",
