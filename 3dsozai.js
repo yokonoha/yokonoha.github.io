@@ -1,28 +1,9 @@
 const PREFIX = "https://yokonoha.pages.dev/3d_souko/";
   
   const modelData = [
+  
     {
-      genre: "キャラクターモデル",
-      items: [
-        {
-          name: "杏子ちゃん3Dモデル",
-          desc: "Webゲーム「あんずはあんずが食べたい!」に登場する杏子ちゃんの3Dモデルです。",
-          tags: [{ class: "model", text: "3Dモデル" }],
-          url: PREFIX + "anzuT2.glb"
-        },
-        {
-          name: "緑葉みのり オリジナル3Dモデル",
-          desc: "キャラクター3Dモデル第二弾!",
-          tags: [{ class: "model", text: "3Dモデル" }],
-          variations: [
-            { label: "通常版", url: PREFIX + "ryokuyokanryaku.glb" },
-            { label: "バージョン2", url: PREFIX + "ryokuyokanryaku2.glb" }
-          ]
-        }
-      ]
-    },
-    {
-      genre: "横井ひな 関連アイテム",
+      genre: "キャラクター向け小物アイテム",
       items: [
         {
           name: "ベレー帽",
