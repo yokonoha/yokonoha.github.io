@@ -144,9 +144,8 @@
       </div>
 
       <h2>Pick UP!</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto;">
-        <a href="https://minatsuki.pages.dev"><img src="./imgs/mina.png" style="width: 100%;" alt="MinatsukiTone"></a>
-        <a href="https://github.com/yokonoha"><img src="./imgs/codes.png" style="width: 100%;" alt="GitHub"></a>
+
+      <div id="pickup-container"></div>
       </div>
 
       <h2>Latest News!</h2>
@@ -174,6 +173,8 @@
       </div>
 
       <h2>POSTS!</h2>
+      <p>↓よこのはの雑記はdetailsタグで囲んでみました。見たい方は下をクリックです!</p>
+      <details>
             <div class="R">
 <div><img src="https://yokonoha.pages.dev/articles/imgs/0006shinchoku.png" alt="アプリ進捗も新ソフトも。" style="width:100%;max-width:400px;"><br>
 <b>アプリ進捗も新ソフトも。</b>
@@ -321,7 +322,7 @@ Mikan氏、描いた絵が一瞬にしてバグで消え去り大爆笑。
         </p>
         <p><small>2026/03/01(編集済み)</small></p>
       </div>
-
+</details>
       <div class="J">
         <h2>3Dモデル素材 配布再開しました!</h2>
         <p>以下のURL先にて配布を再開いたしました!<br>
@@ -484,6 +485,137 @@ Mikan氏、描いた絵が一瞬にしてバグで消え去り大爆笑。
     document.getElementById("gohome").addEventListener("click", () => {
       window.location.href = "https://yokonoha.github.io";
     });
+  </script>
+
+  <script>
+    (function(){
+      const templates = [
+        {
+          title: "本日のおしながき!",
+          name: "Caffeine Barcodes",
+          description: [
+            "次世代ブラウザ（開発中）。",
+            "拡張機能連携が特徴です。"
+          ],
+          link: "https://caffeineapps.pages.dev/codes",
+          linkText: "Caffeine Barcodes",
+          img: "",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "TimesysRe",
+          description: [
+            "ローカル時刻表示ライブラリ。",
+            "当サイトの時刻表示に使用してます!!  ライセンスですか? ありません!! 誰でも制約なしに使えるパブリックなスクリプト!!!!"
+          ],
+          link: "https://github.com/yokonoha/timesysre",
+          linkText: "コードを見る",
+          img: "",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "Caffeine Movie",
+          description: [
+            "ブラウザを動画プレイヤーにしちゃうフレームワーク。",
+            "複数ファイルを投げ込んでも順に流してくれますよ!!!!!"
+          ],
+          link: "https://caffeineapps.pages.dev/movie",
+          linkText: "Caffeine Movie (JP)",
+          img: "https://yokonoha.pages.dev/p_caffeinemovie_thu.png",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "3Dモデル素材配布サイト (イラストトレース/映像作品向け)",
+          description: [
+            "横茶横葉が外部の素材に頼らず製作した100%オリジナルの33D素材だけを載せたサイトです。",
+            "リアルタイムプレビュー機能付きです。規約に従えば商用も可!!! ...とはいっても種類はまだ少ないのですが...是非..."
+          ],
+          link: "https://yokonoha.github.io/3dmodels",
+          linkText: "3Dモデル素材配布サイト (イラストトレース/映像作品向け) - 横茶横葉のサイト",
+          img: "./3dsozaisite.png",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "lvchk(レベルチェック)",
+          description: [
+            "PCで再生中の音のデシベル数を計測するソフトです。",
+            "タスクバーに張り付くようになってます! もしよろしければダウンロードしてみて下さいね!(無料&オープンソース)"
+          ],
+          link: "https://github.com/yokonoha/lvchk",
+          linkText: "lvchk -Simple dB cheker widget for PC(GitHub)",
+          img: "https://private-user-images.githubusercontent.com/189517215/531800695-3578a6ce-49b7-478a-88b0-b0456ba0b5f4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU1Mzg1NzQsIm5iZiI6MTc3NTUzODI3NCwicGF0aCI6Ii8xODk1MTcyMTUvNTMxODAwNjk1LTM1NzhhNmNlLTQ5YjctNDc4YS04OGIwLWIwNDU2YmEwYjVmNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwN1QwNTA0MzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zYjJkMjU1NmYyMGRlYWEwODIxZGFlZmU3Y2Q4Y2IzYzQ4YWZiNTQyOTgwYTVkZjZkOWRiYWVlZmI2ZjQ3NjdjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-Mv-9xoXAXyREJ8F7oiytAaBoOsme1PmPy5PZ2Pylgo",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "日本語ボイス文字起こし",
+          description: [
+            "ブラウザで議事録が作成できるミニツールです。",
+            "環境によって認識精度にばらつきはありますが、、、、お試し...あれ...?"
+          ],
+          link: "https://yokonoha.github.io/dictation.html",
+          linkText: "日本語ボイス文字起こし - YOKOSTA mini Web Apps",
+          img: "./dictation.png",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "FSWrite Web版",
+          description: [
+            "知識ゼロでも!どなたでも! サイト・ブログが作れる!ついでにデザイン・スマホ対応化も勝手にやってくれちゃう。",
+            "単一HTMLファイルを作ってくれる便利なサイトメーカーです。インストールは不要だよっ!! 試してみてね!"
+          ],
+          link: "https://fswrite.pages.dev/",
+          linkText: "FSWrite Web版 - 誰でもブラウザ上で無料で簡単にWebサイトを作れる! FSoverrideCSSベースのHTML作成ツール",
+          img: "./fswritetest.png",
+          contributors: "横茶横葉"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "MinatsukiTone",
+          description: [
+            "MinatsukiToneは歌詞表示対応の音楽プレイヤーです。",
+            "インストール不要で誰でもブラウザですぐに使えるよ!"
+          ],
+          link: "https://minatsuki.pages.dev",
+          linkText: "使ってみる(サービス特設サイト)",
+          img: "https://private-user-images.githubusercontent.com/189517215/520575577-3957bf19-5272-4070-bc90-d3d79aad0030.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU1Mzc0NzQsIm5iZiI6MTc3NTUzNzE3NCwicGF0aCI6Ii8xODk1MTcyMTUvNTIwNTc1NTc3LTM5NTdiZjE5LTUyNzItNDA3MC1iYzkwLWQzZDc5YWFkMDAzMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwN1QwNDQ2MTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mY2ExYzA5MGFiYmM4YzAyMDUxNDY3ODMzOGZiY2VlZmQ0NGNhYWQyNmNkZjFiOTMxMGI5MjA0MWExMTBmZjE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.XM_9x49k9zeSr3mqdP2JIE9KXbWPAtxvBEDaUG4H1FE",
+          contributors: "横茶横葉,Mikan"
+        },
+        {
+          title: "本日のおしながき!",
+          name: "Anzu dB(杏子デシベル!)",
+          description: [
+            "当サイトで過去に公開していたWebゲームに登場したキャラクター唐桃杏子(からももあんず)のアホ毛が踊る!",
+            "無料でオープンソースなデスクトップデシベルメーターウィジェットです。飾りにどーぞ!"
+          ],
+          link: "https://github.com/yokonoha/AnzudB",
+          linkText: "配布サイトへ(GitHub)",
+          img: "https://private-user-images.githubusercontent.com/189517215/531608948-08e040db-6dc2-4031-bc03-e01002f086e3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU1MzczMjMsIm5iZiI6MTc3NTUzNzAyMywicGF0aCI6Ii8xODk1MTcyMTUvNTMxNjA4OTQ4LTA4ZTA0MGRiLTZkYzItNDAzMS1iYzAzLWUwMTAwMmYwODZlMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwN1QwNDQzNDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzllMzRhZWM4MjYzZTM4MmEyNzkyOTk5ZTcxNDFlYTAxNDM1ZThjOTFhMDNiNGY3YmYzYWI0MWI4NjExNjcxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.dLhDsktz3abeyrxor8paeI4ahEwackY5Z8_HseaT8jc",
+          contributors: "横茶横葉,Mikan"
+        }
+      ];
+
+      const out = document.getElementById('pickup-container');
+      if(!out) return;
+      const idx = Math.floor(Math.random() * templates.length);
+      const t = templates[idx];
+
+      let html = '<div class="G">';
+      html += `<h2 style="color: rgb(73, 108, 155);">${t.title}</h2>`;
+      if(t.img) html += `<img src="${t.img}" alt="${t.name}" style="width:100%;max-width:400px;display:block;margin-bottom:8px;">`;
+      html += `<p><b>${t.name}</b></p>`;
+      t.description.forEach(line => { html += `<p>${line}</p>`; });
+      if(t.link) html += `<a href="${t.link}">${t.linkText || t.link}</a><br>`;
+      html += `<p><small>Developer&Contributors: ${t.contributors || ''}</small></p>`;
+      html += '</div>';
+
+      out.innerHTML = html;
+    })();
   </script>
 
   <script src="./acnt.js"></script><!--Admin Controler-->
