@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VoiceConTool - 配信向け音声認識代読ツール</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    #res {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    #micbtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      border-style: dashed;
+      border-color: rgb(99, 183, 155);
+      box-shadow: none;
+    }
+    #micbtn.disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #micbtn.listening {
+      background-color: #d34c4c;
+      color: rgb(0, 0, 0);
+    }
+    </style>
+</head>
+<body>
+    <div id="wit" style="position: absolute; top: 10px; left: 10px; background-color: #d34c4c; border-radius: 5px; padding: 10px;">使い方ガイド</div>
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+    <h1>VoiceConTool</h1>
+    <p id="stat">マイクボタンを押して何か話してください</p>
+    <div id="res">待機中... 音声認識結果をここに表示します</div>
+    <button id="micbtn">マイクをオン</button>
+  </div>
+  <footer style="position: absolute; bottom: 10px;">
+    <p>&copy; 2026 横茶横葉(Y.Yokoha). All rights reserved.<br>
+    動作にはクライアントソフト「代読くん」と有償の対応ソフトが必要です。
+    </p>
+  </footer>
+  <script>
+    const micbtn = document.getElementById('micbtn');
+    const resDiv = document.getElementById('res');
+    const statusDiv = document.getElementById('stat');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if(!SpeechRecognition)
+    {
+        alert("音声認識に対応していないブラウザーをお使いのようです。ほかのブラウザーでお試しください...");
+        micbtn.disabled = true;
+    }
+    else{
+        const recognition=new SpeechRecognition();
+        recognition.lang = 'ja-JP';
+        recognition.interimResults = true;
+        recognition.continuous = true;
+        let kiitemasu = false;
+        let gosign = true;
+        micbtn.onclick=()=>{
+            if(!kiitemasu){
+                gosign=true;
+                recognition.start();
+            }else{
+                gosign=false;
+                recognition.stop();
+            }
+        };
+
+        recognition.onstart=()=>{
+            kiitemasu=true;
+            micbtn.innerHTML="ミュートする"
+            micbtn.classList.add("listening");
+            statusDiv.innerHTML="音声認識動作中です...";
+        }
+        recognition.onend=()=>{
+            kiitemasu=false;
+            micbtn.innerHTML="マイクをオン";
+            micbtn.classList.remove("listening");
+            statusDiv.innerHTML="音声認識停止中。";
+            if(gosign){
+               setTimeout(() => recognition.start(), 100);
+            }
+        }
+
+        recognition.onerror=(e)=>{
+            console.error("認識の過程でエラー。",e.error);
+            statusDiv.innerHTML="音声認識エラー:"+e.error;
+            kiitemasu=false;
+            micbtn.innerHTML="マイクをオン";
+            micbtn.classList.remove("listening");
+            if(gosign){
+                setTimeout(() => recognition.start(), 1000);
+            }
+        };
+        
+        recognition.onresult=(e)=>{
+            let intermediatenakekka="";
+            let finaldecision="";
+            for(let i=e.resultIndex; i<e.results.length; ++i){
+                if(e.results[i].isFinal){
+                    finaldecision+=e.results[i][0].transcript;
+                }else{
+                    intermediatenakekka+=e.results[i][0].transcript;
+                }
+            }
+                resDiv.innerHTML=finaldecision||intermediatenakekka;
+                if(finaldecision){
+                    send2nativeworker(finaldecision);
+                }
+        };
+
+        }
+
+        async function send2nativeworker(recievedtext) {
+            const endpointurl=`http://localhost:8080/?text=${encodeURIComponent(recievedtext)}`;
+            try{
+                const res=await fetch(endpointurl);
+                if(res.ok){console.log("送信済み:",recievedtext);}
+            }
+            catch(err){console.log("サーバーとのコミュニケーション不可",err);statusDiv.innerHTML="サーバーエラー:クライアントソフトを起動してください。";}
+        }
+
+        const whatisthisbtn=document.getElementById("wit");
+        whatisthisbtn.onclick=()=>{
+            window.open("how2use.html", "_blank");
+        };
+
+</script>
+</body>
+</html>
