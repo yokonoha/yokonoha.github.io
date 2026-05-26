@@ -36,3 +36,8 @@
                alert("管理者パスワードを入力してください。");
             }
         }
+        document.getElementById('searchQuery').addEventListener('keypress', () => {
+            if (event.key === 'Enter') {
+                admin();
+            }
+        });
