@@ -14,6 +14,33 @@
     gtag('js', new Date());
     gtag('config', 'G-Q0QPHKTG8T');
   </script>
+  <script>
+window.addEventListener('DOMContentLoaded', () => {
+  function checkTheme() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const currentMinutes = hours * 60 + minutes;
+
+    if (currentMinutes >= 300 && currentMinutes < 1140) {
+      if (!document.body.classList.contains('daytime-theme')) {
+        document.body.classList.add('daytime-theme');
+        console.log('[FSOverride ThemeCHG v2]Daytime theme applied');
+      }
+    } else {
+      if (document.body.classList.contains('daytime-theme')) {
+        document.body.classList.remove('daytime-theme');
+        console.log('[FSOverride ThemeCHG v2]Daytime theme removed');
+      }
+    }
+  }
+
+  checkTheme();
+
+  setInterval(checkTheme, 60000);
+});
+</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,6 +50,7 @@
   "url": "https://yokonoha.github.io/"
 }
 </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>横茶横葉のサイト | 横茶横葉からのお知らせ・ポスト・最新ソフトウェア情報はこちらから</title>
@@ -35,55 +63,56 @@
 
 
 <style>
-  * {
-    color: #423c3c;
-  }
 
-  body {
-    background-color: #eaf0f1;
-  }
+.daytime-theme * {
+  color: #423c3c;
+}
 
-  .A,
-  .B,
-  .C,
-  .D,
-  .E,
-  .F,
-  .G,
-  .H,
-  .I,
-  .J,
-  .K,
-  .L,
-  .M,
-  .N,
-  .O,
-  .P,
-  .Q,
-  .R,
-  .S,
-  .T,
-  .U,
-  .V,
-  .W,
-  .X,
-  .Y,
-  .Z,
-  .sidebar-box {
-    background-color: #fbfbfb;
-  }
+body.daytime-theme {
+  background-color: #eaf0f1;
+}
 
-  footer {
-    background-color: #f0f2ef;
-  }
+.daytime-theme .A,
+.daytime-theme .B,
+.daytime-theme .C,
+.daytime-theme .D,
+.daytime-theme .E,
+.daytime-theme .F,
+.daytime-theme .G,
+.daytime-theme .H,
+.daytime-theme .I,
+.daytime-theme .J,
+.daytime-theme .K,
+.daytime-theme .L,
+.daytime-theme .M,
+.daytime-theme .N,
+.daytime-theme .O,
+.daytime-theme .P,
+.daytime-theme .Q,
+.daytime-theme .R,
+.daytime-theme .S,
+.daytime-theme .T,
+.daytime-theme .U,
+.daytime-theme .V,
+.daytime-theme .W,
+.daytime-theme .X,
+.daytime-theme .Y,
+.daytime-theme .Z,
+.daytime-theme .sidebar-box {
+  background-color: #fbfbfb;
+}
 
-  header {
-    background-color: #e8e8e8;
-  }
+.daytime-theme footer {
+  background-color: #f0f2ef;
+}
 
-  header a {
-    color: #111;
-  }
+.daytime-theme header {
+  background-color: #e8e8e8;
+}
+
+.daytime-theme header a {
+  color: #111;
+}
 
   #text-container {
     font-size: 36px;
@@ -114,7 +143,22 @@
   .hd {
     display: none;
   }
-  
+  .picture-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.picture-container img {
+  width: 100%;
+  display: block;
+}
+.oshiraseredbar {
+  width: 100%;
+  background-color: rgb(255, 155, 125);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+}
 </style>
 </head>
 <body>
@@ -128,7 +172,7 @@
       <a href="https://github.com/yokonoha" class="hd1" id="hd1">GitHub</a>
     </nav>
   </header>
-
+<!--サイト隠し幕 拡大&z-indexで対処済み+動作OK-->
   <div class="hideall" id="cdhide"></div>
 
   <main class="container">
@@ -150,14 +194,21 @@
         <p><small>Rev.2.6</small></p>
         <a href="./index.html" class="hd" id="hd5">当サイトを閲覧</a>
       </div>
-
+  <div class="oshiraseredbar"><p>現在テーマ自動切換機能を試験運用中です。一時的にサイトの表示が不安定になる場合があります。</p></div>
       <h2>Pick UP!</h2>
 
       <div id="pickup-container"></div>
       </div>
 
       <h2>Latest News!</h2>
-
+<div class="N">
+  <img src="https://github.com/yokonoha/vvconnect/raw/main/image.png" alt="vvconnect ボイボコネクトプラグイン" style="width: 100%; height: auto; border-radius: 8px; max-width: 400px; margin-bottom: 15px;">
+  <h2>代読くん向けカスタムモジュール ボイボコネクトプラグイン 公開開始</h2>
+  <p>代読くんをボイボに対応させるためのカスタムモジュール「ボイボコネクト」をリリースしました。これにより、ボイボを使った実況配信が可能となりました!</p>
+  <p>すぐお試しになりたい方は代読くんRev.3.1以降のall版(全部入りセット)をダウンロードして下さい。同梱済みです!<br>
+    <a href="https://github.com/yokonoha/daidoku_kun/releases">代読くん公開リポジトリのリリースページ</a><br>
+    <a href="https://github.com/yokonoha/vvconnect" >ボイボコネクトのオープンソースなリポジトリ</a><br>
+  </div>
            <div class="N">
         <h2>新ソフト 代読くん & VoiceConTool公開開始</h2>
         <p>Webから音声合成ソフトを操作できるソフト 代読くん と 代読くんを使って実況動画配信が出来るツール VoiceConToolが公開されました。</p>
@@ -202,6 +253,25 @@
         <a href="https://yokonoha.github.io?cdusr=1">https://yokonoha.github.io?cdusr=1</a>
         <p><small>2025/12/26</small></p>
       </div>
+<h2>Related Links!</h2>
+<h3>Characters From This Site(2024)!</h3>
+<div class="picture-container">
+  <img src="./hinasquare.png" style="width:100%;max-width:400px;" alt="Hina Yokoi by 「YOKONOHA Three」 members">
+  <div class="G">
+    <p>当サイト発!スマホモチーフなキャラクター 横井ちゃんの関連リンクです。<br>
+      "YOKONOHA 3"が管理を担当しています。</p>
+    <a href="https://yokoihina.pages.dev/">横井ひな 公式サイト(外部)</a><br>
+<br>
+  </div>
+  <img src="./imgs/anzulv.png" style="width:100%;max-width:400px;" alt="唐桃杏子 デシベルウィジェット by Y.Yokoha">
+  <div class="M">
+    <p>当サイトの過去作ゲーム あんずはあんずが食べたい!にて登場した <ruby>唐桃杏子<rt>からもも あんず</rt></ruby>です。<br>
+      ゲームは公開終了済みですが、唐桃杏子のデシベルウィジェットを公開中です。
+      </p>
+    <a href="https://github.com/yokonoha/AnzudB">唐桃杏子 デシベルウィジェット(外部)</a><br>
+</div>
+</div>
+
 <h2>MILESTONE!</h2>
 <div class="N">
 <p>現在は変わってしまいましたが、そもそもの当サイトの活動の原点は、my belovedな<b>「スマホの良さを伝え・再認知していただく!」</b>ことでした。</p>
@@ -325,13 +395,78 @@
           document.getElementById('ua-content').textContent = ua;
 
           if (ua.includes("offee/")) {
-            document.getElementById('appendix').textContent = "おや？これは珍しいですね、横茶横葉謹製 Coffeeブラウザですね！ 申し訳ございませんが、公式サポートは切れておりますのでご利用はお控えくださいませ!";
+            document.getElementById('appendix').textContent = "おや？これは珍しいですね、横茶横葉謹製 Coffeeブラウザですね！ 申し訳ございませんが、公式サポートはどのバージョンも切れておりますのでご利用はお控えくださいませ!";
           } else if (ua.includes("affeine")) {
             document.getElementById('appendix').textContent = "このUAは... 横茶横葉謹製 ReCaffeine系のブラウザですね！使ってくれてありがと〜！";
           } else if (ua.includes("oid.yb")) {
             document.getElementById('appendix').textContent = "閲覧ありがとうございます！余計なお世話ですが、お使いのブラウザはwebviewベースで、恐らくファイルのダウンロード機能が不十分..?(2026.2時点)かなと思います〜。(blobタイプのダウンロード不能)ご利用の際はお気をつけて...";
           } else if (ua.includes("ndroid")) {
-            document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が最も愛するOSから見てくれてるなんて嬉しいです！";
+            if(ua.includes("ixe")){
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなスマホから見てくれてるなんて嬉しいです！結構よく出来てるスマホですよね!!";
+            }
+            else if(ua.includes("oid 17"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！結構新しいOSですね!!";
+            }
+            else if(ua.includes("roid 16"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！結構新しいOSですね!!";
+            }
+            else if(ua.includes("roid 15"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！新しめなOSバージョンですね!";
+            }
+            else if(ua.includes("roid 14"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！バージョンは割と新しくっていいですね!";
+            }
+            else if(ua.includes("roid 13"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.13ですね!前のOSバージョンから色々変わってていいですよね～。私は結構好きですよ!";
+            }
+            else if(ua.includes("roid 12"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.12ですね!結構新しいOSバージョンでいいですね～。次世代のにはあるカラー設定はありませんが、私は結構好きです!";
+            }
+            else if(ua.includes("roid 11"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.11ですね!結構新しいOSバージョンでいいですね～。たしかこのあたりからストレージ管理方法が若干ややこしくなりましたね～。でも私は結構好きですよ!";
+            }
+            else if(ua.includes("roid 10"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.10ですね!今となっては少し古くなっちゃいましたが、安定感抜群なOSバージョンですよね!頼れる!!";
+            }
+            else if(ua.includes("roid 9"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.9ですね!少し古いOSバージョンですが、安定感抜群でいいですよね!埋め込み端末とかサイネージとかではまだまだ現役なOSバージョンですよね!よく見かけます!";
+            }
+            else if(ua.includes("roid 8"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.8ですね!今となってはかなり古いですが、このあたりからナビゲーションバーのスタイルが変わったりしましたよね～。思い出深いです。";
+            }
+            else if(ua.includes("roid 7"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.7ですね!かなり古いOSバージョンですが、安定感抜群でいいですよね!私も結構好きでした!ただ、パッケージのインストールの時に権限を書かなくてもインストール出来ちゃうってのはちょっと怖かったですね～(今はプロテクト君が止めてくれるけど...)。マニアックな話ではありますが...。";
+            }
+            else if(ua.includes("roid 6"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.6ですね!めちゃくちゃ古いOSバージョンですが、レトロで結構好き。";
+            }
+            else if(ua.includes("roid 5"))
+            {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.5ですね!骨董品レベルですが、4.4よりはまだ使えますよね!頑張ればですが...。";
+            }
+            else if(ua.includes("roid 4.4"))
+             {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.4.4ですね....!!!? 本当ですか!?かなーりお詳しい方なのでしょうか!? 私が初めて触ったのがこのバージョンだったので、思い入れがすごくあります! 一緒に語りませんか!?";
+            } 
+            else if(ua.includes("roid 4"))
+             {
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.4.... んんん!!? かなりマニアックな方ですね!? 4はもう中古で大量に出回ってますね!触ったことはありますが...今となっては...常用はちょっと厳しいかもしれません....。";
+            }
+            else{
+              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！";
+            }
           } else if (ua.includes("iPh")) {
             document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　デザインが光る、カッコいいスマホですね！";
           } else if (ua.includes("indo")) {
@@ -339,7 +474,7 @@
           } else if (ua.includes("ac O")) {
             document.getElementById('appendix').textContent = "閲覧頂きありがとうございます！ タブレット..? いや、パソコン..ですか? どちらにしてもステキなデザインのデバイスをお使いなんですね！";
           } else if (ua.includes("inux")) {
-            document.getElementById('appendix').textContent = "おや？これは珍しい! このOSはロマンがありますよね〜 いろんなの試したい。";
+            document.getElementById('appendix').textContent = "おや？これは珍しい! このOSはロマンがありますよね〜 いろんなの試したいですよね!";
           } else {
             document.getElementById('appendix').textContent = "閲覧ありがとうございます〜";
           }
