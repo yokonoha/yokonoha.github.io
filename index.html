@@ -202,7 +202,7 @@ body.daytime-theme {
       <div style="display: flex; flex-direction:row;">
 <h2 style="text-wrap: nowrap;">Software Support Information!</h2></div>
 <div class="P">
-  <h2>[固定] 説明書を掲載しています!</h2>
+  <h2>[固定] 説明書を掲載しています</h2>
   <p>横茶横葉の製作したソフトウェアやアプリケーションの説明書を掲載しています。</p>
   <h3>FSwrite</h3>
   <p>FSwriteは、Webブラウザ上で動作するシンプルなWebサイト作成ツールです。さまざまな機能を備えており、初心者でも簡単に使用できます。<br>説明書データは以下のリンクよりご覧いただけます。</p>
@@ -223,6 +223,48 @@ body.daytime-theme {
   <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[ソフトウェアサポート情報] <br>FSwrite Rev.v4.0 更新リリースノート <br>書きかけ記事のプロジェクトファイルのエクスポート+インポートが可能になりました✨<br>PCやタブレット間でデータをコピーできます。<a href="https://t.co/Til2U1JV1s">https://t.co/Til2U1JV1s</a></p>&mdash; 横茶横葉(ららられれ) (@yokocha_yokoha) <a href="https://x.com/yokocha_yokoha/status/2079754701076402219?ref_src=twsrc%5Etfw">July 22, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
   <a href="https://fswrite.pages.dev" target="_blank">FSwriteを使ってみる</a>
 </div>
+<h2>Important Info!</h2>
+<div class="E">
+<p>当サイト管理人である横茶横葉はGithubを含む一部の活動を除き終了し、2026年8月より段階的にサイト更新を終了します。<br>
+これに伴い当サイトは現在、自動管理への切替作業を行っています。<br>Githubでは今後も開発作業を続行する予定です。
+</p>
+</div>
+<h2>Services Status!</h2>
+
+<div class="F">
+  <h3>ソフトウェアの更新プログラム配布情報</h3>
+  <div class="embedded-sidebar" style="height: 400px;"><iframe src="./softwareupdates.html" width="100%" height="100%" frameborder="0" id="frm"></iframe></div>
+<h3>Webサービスの運用ステータス情報</h3>
+  <div class="embedded-sidebar" style="height: 400px;"><iframe src="./status/index.html" width="100%" height="100%" frameborder="0" id="frm2"></iframe></div>
+
+</div>
+
+<script>
+  const iframe = document.getElementById("frm");
+
+iframe.onload = () => {
+  const doc = iframe.contentDocument;
+
+  doc.querySelectorAll("a").forEach(a => {
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
+};
+
+</script>
+<script>
+  const iframe2 = document.getElementById("frm2");
+
+iframe2.onload = () => {
+  const doc2 = iframe2.contentDocument;
+
+  doc2.querySelectorAll("a").forEach(a => {
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
+};
+
+</script>
       <h2>Latest News!</h2>
 <div class="N">
   <img src="https://github.com/yokonoha/vvconnect/raw/main/image.png" alt="vvconnect ボイボコネクトプラグイン" style="width: 100%; height: auto; border-radius: 8px; max-width: 400px; margin-bottom: 15px;">
@@ -232,34 +274,6 @@ body.daytime-theme {
     <a href="https://github.com/yokonoha/daidoku_kun/releases">代読くん公開リポジトリのリリースページ</a><br>
     <a href="https://github.com/yokonoha/vvconnect" >ボイボコネクトのオープンソースなリポジトリ</a><br>
   </div>
-           <div class="N">
-        <h2>新ソフト 代読くん & VoiceConTool公開開始</h2>
-        <p>Webから音声合成ソフトを操作できるソフト 代読くん と 代読くんを使って実況動画配信が出来るツール VoiceConToolが公開されました。</p>
-        <p>お試しになりたい方は以下のURLからご覧いただけます。<br>
- <a href="https://github.com/yokonoha/daidoku_kun">代読くん公開リポジトリ(OSSです!)</a><br>
-          ※VoiceConToolは代読くんを起動後、VCTボタンを押すとご利用いただけます。<br><br>
-<a href="./daidoku_kun/"><img src="./ddkn.png" width="80%" style="max-width: 600px;" alt="横茶横葉個人製作ソフト 代読くん"></a><br>
-</p>
-             <p><small>2026/05/08</small></p>
-</div>
-           <div class="N">
-        <h2>新サービスを開始しました</h2>
-        <p>FSWrite サイト作成ツール を正式リリースしました。</p>
-        <p>ご利用になりたい方は以下のURLからご利用になれます。(内容はベータ版とは異なります。)<br>
- <a href="https://fswrite.pages.dev">FSWrite Web版 - 誰でもブラウザ上で無料で簡単にWebサイトを作れる! FSoverrideCSSベースのHTML作成ツール</a>
-</p>
-        <p><small>2026/03/28</small></p>
-      </div>
-      <div class="N">
-        <h2>Coffeeブラウザ LTS版(限定頒布版ビルド)のサポート終了について</h2>
-        <p>一般向けCoffeeブラウザは、2025年7月24日に既にサポートは完全に終了していますが、申し出のあった方に配布致しましたLTS版(v26.0 バージョンコード:Maboroshi)につきましてもサポート終了期日が決定致しましたのでお知らせ致します。<br>2026年3月1日をもちまして完全にサポートが終了することとなりました。この期日を過ぎてのご利用はお控えください。なお、CoffeeAccess(データ救出用アフターサポートアプリ)につきましては現在配布はしておりませんが、インストールされている方向けのサポートを継続致します。</p>
-        <p>追記:3/1となりましたので、サポートを終了致しました。約6年間、ご利用いただきありがとうございました! 引き続き新ブラウザの開発を進めて参ります!</p>
-        <p><small>2026/02/26(編集済み)</small></p>
-      </div>
-
-
-
-
       <div class="F">
         <h2>サイトシステム改良</h2>
         <p>当サイトメインページへアクセスする際にURL末尾に"?cdusr=1"というクエリパラメータを追加すると、Contents Deliveryにのみアクセスできるようになりました!</p>
@@ -267,89 +281,22 @@ body.daytime-theme {
         <a href="https://yokonoha.github.io?cdusr=1">https://yokonoha.github.io?cdusr=1</a>
         <p><small>2025/12/26</small></p>
       </div>
-<h2>Related Links!</h2>
-<h3>Characters From This Site(2024)!</h3>
-<div class="picture-container">
-  <img src="./hinasquare.png" style="width:100%;max-width:400px;" alt="Hina Yokoi by 「YOKONOHA Three」 members">
-  <div class="G">
-    <p>当サイト発!スマホモチーフなキャラクター 横井ちゃんの関連リンクです。<br>
-      "YOKONOHA 3"が管理を担当しています。</p>
-    <a href="https://yokoihina.pages.dev/">横井ひな 公式サイト(外部)</a><br>
-<br>
-  </div>
-  <img src="./imgs/anzulv.png" style="width:100%;max-width:400px;" alt="唐桃杏子 デシベルウィジェット by Y.Yokoha">
-  <div class="M">
-    <p>当サイトの過去作ゲーム あんずはあんずが食べたい!にて登場した <ruby>唐桃杏子<rt>からもも あんず</rt></ruby>です。<br>
-      ゲームは公開終了済みですが、唐桃杏子のデシベルウィジェットを公開中です。
-      </p>
-    <a href="https://github.com/yokonoha/AnzudB">唐桃杏子 デシベルウィジェット(外部)</a><br>
-</div>
-</div>
 
-<h2>MILESTONE!</h2>
-<div class="N">
-<p>現在は変わってしまいましたが、そもそもの当サイトの活動の原点は、my belovedな<b>「スマホの良さを伝え・再認知していただく!」</b>ことでした。</p>
-<p>今年で当サイトは8年目! 8年の歩みをまとめました。</p>
-<img src="./syutaisei.png" style="width:100%;max-width:600px;" alt="公開したアプリ・ソフト のコラージュ"><br>
 
-<h3>アプリ開発</h3>
-<p>記録していた範囲でしか分かりませんが、累計37点のスマホアプリをリリースしました! 広告・アプリ内課金一切なし! 総アップデートパッケージ配布回数はCoffee:25回,CoffeeLite:5回,自動スクロールマップ二画面:4回,GPS Info:2回,横葉あとらす:5回でした。</p>
-<p>古端末再生プロジェクトなんて銘打って、OSバージョンが5から最新の16(当時は15)まで対応させるというこだわりを大事にしてました。<br>
-古いOSを使っている方も、最新のOSを使っている方も、アプデでサポートを切ったりせず、大事にしたいという思いからです(なんてね)。<br>
-</p>
-<h3>PC向けフリーorオープンソースソフトウェア開発</h3>
-<p>スマホを最大限活用し愛するためには、やはりパソコンの存在も不可欠。ということでPCソフトもたくさん作ってまいりました。</p>
-<p>私はWindowsFormsが大好きなので、ほとんどがC#のこれで作られたソフトです。(tkinterを使った時もありましたが...)</p>
-<p>2026年6月現在で総数約20点...だと思います。"ニーズ"より"シーズ"というニーズガン無視な"絶対よくない" なんといいましょうか、時代を逆行するような変なソフト作りをしているにもかかわらず、思ったよりもいろんな方に使っていただけました!<br>
-ありがとうございます。
-</p>
-<h3>無料Webサービス開発</h3>
-<p>ブラウザで動くサービスもいくつか作りました! これもたくさん作ってきましたが、現在も利用可能なものは10点程度でしょうか。</p>
-<p>ブラウザで動くものは、スマホでもPCでも、OSも選ばずに使えるのが魅力。<del>そして作るのが楽です。</del></p>
-<p>今出ているものの中では、MinatsukiToneがおすすめです。</p>
-<h3>キャラクター制作</h3>
-<p>普段何気なく触るスマホに対して「改めてすごいんだなぁ」と意識を向けていただくには、スマホそのものをPRすることが必要かなぁと思ったので擬人化..とはいきませんが、スマホを題材にキャラクターを作ってみました。</p>
-<p>そのはずでしたが、当サイトキャラクターを仕上げた後、スマホとは関係のないキャラクター作りを無秩序に続けてしまいました。<br>
-全員分の3Dモデルを用意するの大変でした。
-もうたぶんやりません。だれか引き継いで～...<br><small>※
-<a href="https://yokoihina.pages.dev/">当時のサイトキャラクター</a>に関してはららられれ(@Rarararere1)へ引き継ぎます。<br>
-<del>誰も引き継ぎ手がいなければ、Mikan師匠とかに押し付けます。</del></small>
-</p>
-<h3>その他</h3>
-<p>その他、イラストや3Dモデルの素材配布、ブログ記事の公開、SNS投稿なども行ってきました。</p>
-<p>もはやなにをしてるのかわからない やることは何かに絞りたい そんな状態が恒常化しつつある当サイト今日この頃です。</p>
-<br>
-<p>しかしながら、ガジェット好きの方・3DCG好きの方、イラスト好きの方など、非常に多くの方の目に留まって頂けてとてもうれしいと感じた8年でした。当サイトもWebサービスもいろんな国の方にいろんなデバイスからご活用いただけましたし...<br>
-そしてこの度、当サイト管理人である横茶横葉は当サイトの運営及び活動を8月中旬頃を持ちまして、一部を除き終了することとなりました。<br>
-今度はイラスト等のアート活動に注力して参ります。<br>まだ見ぬ新しい活動の世界へと進んでいきます!
-</p>
-</div>
+
     </section>
     
     <div class="sidebar">
       <div class="sidebar-box">
-        <img src="./imgs/translg.png" alt="横茶横葉のロゴ" style="width:60%;max-width:400px;">
+        <img src="./imgs/translg.png" alt="横茶横葉のロゴ" style="width:60%;max-width:400px;background-color: white;">
         <br>
         <p><small>Designed by FSOverride</small></p>
       </div>
 
-        <div class="sidebar-box">
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <img src="./in.png" alt="横茶横葉活動転換の報告" style="width: 100%; height: auto; border-radius: 8px; max-width: 400px; margin-bottom: 15px;"><br>
-</div>
-<h3>重要なお知らせ</h3>
-<p>当サイト管理人である横茶横葉は当サイトの運営及び活動を8月中旬頃を持ちまして、一部を除き終了致します。</p>
-<p>理由といたしましては、私自身のやりたいことが変容したためです。今後は並行して行ってきたイラスト等のアート活動に注力して参ります。</p>
-<p>各種ソフトウェアのサポート・更新は事前に宣言いたしました通り今後も引き続き行いますので当サイトは完全な終了までは削除いたしません。</p>
-<p>ソフトウェア開発を主軸とした活動はここで終了となります。8年間ご愛顧いただきまして誠にありがとうございました。</p>
-<p>今後は心機一転して新たな活動にも取り組んでまいります。もしよろしければご期待ください!</p>
-<p>2026年7月20日 当サイト管理人 横茶横葉</p>
-<p><a href="./blog/11.html">詳細は横葉ノート記事にてまとめています。こちらをクリックしてください</a></p>
-<p><a href="https://rarararere.pages.dev">移行先はコチラ</a>(雰囲気が違いますが、なかのひとはおんなじです。)</p>
-</div>
+
       <div class="sidebar-box">
         <h3>サイトシステムバージョン</h3>
-        <button onclick="admindiv()" style="background-color: white;">Rev.16.0 (Last Modified:2026/05/27)</button>
+        <button onclick="admindiv()" style="background-color: white;">Rev.17.0 (Last Modified:2026/08/01)</button>
         <div class="F" id="hd" style="display:none;">
           <h3>管理者向け操作画面</h3>
           <input type="text" id="searchQuery" placeholder="Type an AdminPass">
@@ -367,16 +314,10 @@ body.daytime-theme {
             alt="SNSバナー"></a> 
         <a href="https://ext.seiga.nicovideo.jp/user/illust/141983572"><img src="./mbnr (1).png" style="width:29vw; max-width:150px;"
             alt="立ち絵素材系"></a>
-        <a href="https://yokonoha.github.io/3dmodels"><img src="./3dstoragebnr.png" style="width:29vw; max-width:150px;"
-            alt="無料3Dモデル素材 by 横茶横葉"></a>
       </div>
       <div class="sidebar-box" style="justify-content: center; align-items: center; text-align: center;">
-             <div  style="display: flexbox; flex-direction: row; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; ">
-    <a href="./softwareupdates.html">
 
-    <p style="color: tomato;">ソフトウェア<br>更新確認サイト</p>
-</a>  <p><small>自動更新通知機能に対応したソフトの最新バージョンを自動更新しています!</small></p>
-  </div>
+
       </div>
       <div class="sidebar-box">
         <p> ローカル時刻 by <a href="https://github.com/yokonoha/timesysre">TimesysRe</a></p>
@@ -510,9 +451,7 @@ body.daytime-theme {
 
       <div class="sidebar-box">
         <p><ruby>横茶横葉<rt>よこちゃよこは</rt></ruby>/<ruby>Y.Yokoha<rt>YokochaYokoha</rt></ruby></p>
-      <p>↓The next stop is....↓</p>
-      <p>ららられれ (Rarararere)</p>
-      <img src="./omk.png" style="width:100%;max-width:400px;" alt="移行中!">
+
       </div>
 
     </div>
