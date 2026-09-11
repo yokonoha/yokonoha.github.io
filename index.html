@@ -199,13 +199,7 @@ body.daytime-theme {
 
       <div id="pickup-container"></div>
       </div>
-      <div style="display: flex; flex-direction:row;">
-<h2 style="text-wrap: nowrap;">Software Support Information!</h2></div>
-<div class="B">
-  <h2>FSwrite Web版 Rev.4更新</h2>
-  <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[ソフトウェアサポート情報] <br>FSwrite Rev.v4.0 更新リリースノート <br>書きかけ記事のプロジェクトファイルのエクスポート+インポートが可能になりました✨<br>PCやタブレット間でデータをコピーできます。<a href="https://t.co/Til2U1JV1s">https://t.co/Til2U1JV1s</a></p>&mdash; 横茶横葉(ららられれ) (@yokocha_yokoha) <a href="https://x.com/yokocha_yokoha/status/2079754701076402219?ref_src=twsrc%5Etfw">July 22, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
-  <a href="https://fswrite.pages.dev" target="_blank">FSwriteを使ってみる</a>
-</div>
+
 
 <h2>Services Status!</h2>
 
@@ -245,9 +239,17 @@ iframe2.onload = () => {
 </script>
   
       <h2>Latest News!</h2>
+   <div class="N">
+<h2>YKH_VCIを一般公開致しました。</h2>
+<p>(開発者向け)ブラウザ上でFLACファイルのメタデータ(Vorbis Comments)をパースして返してくれるWeb開発者向けのツールです。</p>
+<p>ほぼ同様のものを<a href="https://minatsuki.pages.dev">MinatsukiTone</a>にて利用しておりますので、そちらで動作をご確認いただけます!!</p>
+<p>バイナリパーサーは開発者自身初めて製作したものなので、なにか問題点等ございましたらお知らせください。</p>
+<a href="https://github.com/yokonoha/ykh_vci">YKH_VCI.js リポジトリ (Apache 2.0です)</a>
+<small>2026/09/11</small>
+</div>   
 <div class="N">
 <h2>新MinatsukiTone 開発計画について</h2>
-<p>昨日大型のアップデートを行ったMinatsukiToneですが、今後は根本的な仕組みを改良した新バージョン MinatsukiTone NEXT(仮称) に取り組む予定です✨</p>
+<p>昨日大型のアップデートを行ったMinatsukiToneですが、今後は根本的な仕組みを改良した新バージョン MinatsukiTone NEXT(仮称) へアップデート予定です✨</p>
 <p>音質改善や視聴覚体験の向上、またMinatsukiToneに残存する不具合の修正などを予定しています!!!  <br>MinatsukiToneは更にもっと"ユニークなWebベース音楽プレイヤー"へ!  完成・発表までお待ちください〜。(本ソフトウェア構想は現在計画段階です。予告なしに変更になることがあります。)</p>
 <small>2026/09/07</small>
 </div>
@@ -260,7 +262,7 @@ iframe2.onload = () => {
 <div class="N">
 <h2>MinatsukiTone Rev.6.0公開</h2>
 <p>大型のアップデートを2026/09/06より公開いたしました。歌詞表示機能が強化され、表示枠の移動の実施と独自パーサーによるFLACファイルの歌詞データ表示を実現しました!</p>
-<p>PWAをお使いの方は二回目の起動時に自動で更新されます。<br>さらに新機能が追加されたMinatsukiToneをぜひご利用くださいませ！</p>
+<p>PWAをお使いの方は二回目の起動時に自動で更新されます。<br>さらに新機能が追加されたMinatsukiToneをぜひご利用ください!</p>
 <small>2026/09/06</small>
 </div>
 <div class="N">
@@ -330,12 +332,9 @@ iframe2.onload = () => {
       </div>
 
       <div class="sidebar-box">
-        <h3> アプリやソフトウェアをお探しの方へ</h3>
-        <p>オープンソースプロジェクトをご覧になりたい方は<a href="https://github.com/yokonoha">こちらのサイト</a>へ～</p>
-        <p>利用規約はフッターにリンクがございます。</p>
-        <p>If you would like to find my services' Terms of Use, you can find them at the bottom of this page.</p>
-        <p>如果您正在寻找我的使用条款，您可以在本页底部找到它们。</p>
-        <p><small>2025/07/05(編集済み)</small></p>
+        <p>製作しているものをご覧になりたい場合はGitHubリポジトリへ</p>
+        <a href="https://github.com/yokonoha?tab=repositories">GitHub リポジトリ一覧</a>
+        <p><small>2026/09/11</small></p>
       </div>
 
       <div id="ua-board" class="sidebar-box">
@@ -356,72 +355,10 @@ iframe2.onload = () => {
           } else if (ua.includes("oid.yb")) {
             document.getElementById('appendix').textContent = "閲覧ありがとうございます！余計なお世話ですが、お使いのブラウザはwebviewベースで、恐らくファイルのダウンロード機能が不十分..?(2026.2時点)かなと思います〜。(blobタイプのダウンロード不能)ご利用の際はお気をつけて...";
           } else if (ua.includes("ndroid")) {
-            if(ua.includes("ixe")){
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなスマホから見てくれてるなんて嬉しいです！結構よく出来てるスマホですよね!!";
-            }
-            else if(ua.includes("oid 17"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！結構新しいOSですね!!";
-            }
-            else if(ua.includes("roid 16"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！結構新しいOSですね!!";
-            }
-            else if(ua.includes("roid 15"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！新しめなOSバージョンですね!";
-            }
-            else if(ua.includes("roid 14"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！バージョンは割と新しくっていいですね!";
-            }
-            else if(ua.includes("roid 13"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.13ですね!前のOSバージョンから色々変わってていいですよね～。私は結構好きですよ!";
-            }
-            else if(ua.includes("roid 12"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.12ですね!結構新しいOSバージョンでいいですね～。次世代のにはあるカラー設定はありませんが、私は結構好きです!";
-            }
-            else if(ua.includes("roid 11"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.11ですね!結構新しいOSバージョンでいいですね～。たしかこのあたりからストレージ管理方法が若干ややこしくなりましたね～。でも私は結構好きですよ!";
-            }
-            else if(ua.includes("roid 10"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.10ですね!今となっては少し古くなっちゃいましたが、安定感抜群なOSバージョンですよね!頼れる!!";
-            }
-            else if(ua.includes("roid 9"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.9ですね!少し古いOSバージョンですが、安定感抜群でいいですよね!埋め込み端末とかサイネージとかではまだまだ現役なOSバージョンですよね!よく見かけます!";
-            }
-            else if(ua.includes("roid 8"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.8ですね!今となってはかなり古いですが、このあたりからナビゲーションバーのスタイルが変わったりしましたよね～。思い出深いです。";
-            }
-            else if(ua.includes("roid 7"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.7ですね!かなり古いOSバージョンですが、安定感抜群でいいですよね!私も結構好きでした!ただ、パッケージのインストールの時に権限を書かなくてもインストール出来ちゃうってのはちょっと怖かったですね～(今はプロテクト君が止めてくれるけど...)。マニアックな話ではありますが...。";
-            }
-            else if(ua.includes("roid 6"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.6ですね!めちゃくちゃ古いOSバージョンですが、レトロで結構好き。";
-            }
-            else if(ua.includes("roid 5"))
-            {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.5ですね!骨董品レベルですが、4.4よりはまだ使えますよね!頑張ればですが...。";
-            }
-            else if(ua.includes("roid 4.4"))
-             {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.4.4ですね....!!!? 本当ですか!?かなーりお詳しい方なのでしょうか!? 私が初めて触ったのがこのバージョンだったので、思い入れがすごくあります! 一緒に語りませんか!?";
-            } 
-            else if(ua.includes("roid 4"))
-             {
-              document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！Ver.4.... んんん!!? かなりマニアックな方ですね!? 4はもう中古で大量に出回ってますね!触ったことはありますが...今となっては...常用はちょっと厳しいかもしれません....。";
-            }
-            else{
+
+            
               document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　しかも当サイト管理人が好きなOSから見てくれてるなんて嬉しいです！";
-            }
+            
           } else if (ua.includes("iPh")) {
             document.getElementById('appendix').textContent = "スマホからの閲覧ありがとうございます〜　デザインが光る、カッコいいスマホですね！";
           } else if (ua.includes("indo")) {
@@ -435,7 +372,7 @@ iframe2.onload = () => {
           }
 
           if (ua.includes("bot") || ua.includes("rchive")) {
-            document.getElementById('appendix').textContent = "あ？えっと、もしかして人間ではなくてボットちゃんかな？こんにちは！当サイト管理人、横茶横葉と申します〜。クローリングご苦労様です。あ、勝手なWebアーカイブへの登録だけはやめてね...私困っちゃいます。";
+            document.getElementById('appendix').textContent = "あ？えっと、もしかして人間ではなくてボットちゃん？こんにちは！当サイト管理人、横茶横葉と申します〜。クローリングご苦労様です。あ、勝手なWebアーカイブへの登録だけはやめてね...困っちゃいます。";
           }
         })();
       </script>
@@ -502,22 +439,10 @@ iframe2.onload = () => {
       const templates = [
         {
           title: "本日のおしながき!",
-          name: "Caffeine Barcodes",
-          description: [
-            "バーコード・2次元コードを作る！読む！",
-            "ブラウザ上で簡単に使えるユーティリティです。"
-          ],
-          link: "https://caffeineapps.pages.dev/codes",
-          linkText: "Caffeine Barcodes",
-          img: "",
-          contributors: "横茶横葉"
-        },
-        {
-          title: "本日のおしながき!",
           name: "TimesysRe",
           description: [
             "ローカル時刻表示ライブラリ。",
-            "当サイトの時刻表示に使用してます!!  ライセンスですか? ありません!! 誰でも制約なしに使えるパブリックなスクリプト!!!!"
+            "当サイトの時刻表示に使用してます!!  ライセンスは、ありません!! 誰でも制約なしに使えるパブリックなスクリプト!!!!"
           ],
           link: "https://github.com/yokonoha/timesysre",
           linkText: "コードを見る",
@@ -614,7 +539,7 @@ iframe2.onload = () => {
           ],
           link: "https://github.com/yokonoha/daidoku_kun",
           linkText: "配布サイトへ(GitHub)",
-          contributors: "横茶横葉 ,(ららられれ)"
+          contributors: "横茶横葉"
         }
       ];
 
