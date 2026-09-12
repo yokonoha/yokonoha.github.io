@@ -74,7 +74,7 @@ footer { background-color: #f0f2ef !important; } header { background-color: #e8e
 <p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
 <br>
 <p>元々はWeb連携機能のみの製作を予定していましたが、この連携機能と透過フォーム、あとはWeb Speech APIを使えば即席実況配信機能作れそうかも! と考え、いろいろ盛り込んだらこうなってしまいました。私は結月ゆかり,結月ゆかり雫のボイスライブラリを買ってあるので、そちらでテストしました! ちゃんと自分の喋ったことをオウム返しみたいに代弁してくれましたよ!!</p>
-<p>音声認識の精度を最大化するにはGoogle Chromeと一指向性マイク(ちょっとお高いマイク)を使うといいですよ!(全指向性でも問題はありませんが、、雑音が入りやすいかもです。)</p>
+<p>音声認識の精度を最大化するにはGoogle Chromeと単一指向性マイク(ちょっとお高いマイク)を使うといいですよ!(全指向性でも問題はありませんが、、雑音が入りやすいかもです。)</p>
 <p>各種紹介や説明はリポジトリの方で説明しておりますのでそちらをぜひご参照ください!</p>
 <br>
 <p>現在はA.I.VOICEのみ対応ですが、今後のアップデートで有名なほかのボイスソフトとの連携も可能にしていきたいですし、ほかの方の作る拡張機能なんかにも対応していきたい所存!!!</p>
@@ -90,45 +90,7 @@ footer { background-color: #f0f2ef !important; } header { background-color: #e8e
 <br>
 <p>当ソフトにはA.I.VOICE Editor API,NAudioを利用させていただきました。製作者の方々に感謝申し上げます。</p>
 <br>
-<h3>参考:横茶横葉のサイトのPOSTアーカイブ</h3>
-<p>ヨンデモ ヨマナクテ イイ デスヨ。</p>
-           <div class="F">
-<div>
-<img src="https://yokonoha.pages.dev/articles/imgs/0007shinsoft.png" alt="新ソフトを出します!!" style="width:100%;max-width:400px;"><br>
-        <b>新ソフトを出します!!</b>
-        <p>忙しいからサイト編集から逃げた私、横茶横葉はないはずのスキマ時間にソフトを作ってしまいました...。ホントはこんな事してる時間なんてないくらい忙しいはずなのに...おかしいぞ？　アイデアが思い浮かんでしまうと癖でついやっちゃうんだ。許して...ね、、。</p><br>
-        <p>さて、本題ですが、タイトルの通り、新ソフトを近いうちにリリースしたいと思っています! <br>今回のテーマはズバリ、音声合成ソフト！.の補佐をするソフト！です！<br><br>私が年末に描いてたゆかりさんの立ち絵素材とか雫君の立ち絵とかを見ていただければお分かりかとは思いますが、私合成音声合成界隈も結構好きなんですよ〜。もう既に3本くらいエディターソフト買っちゃいました。(たまにしか使ってないんですけど..ね)<br><br>
-でですね、そんなゆかりさんをはじめ、音声合成ソフトをブラウザから使いたいなぁと思い始めたので、使えるようにするソフト、作っちゃいました。<br>端的に言えば、音声合成ソフトを無理矢理apiエンドポイントを設けてブラウザからローカルへ命令を伝達出来るようにした感じ？ですね。(何言ってるのかよく分からないけど)。<br><br>
-あ、あとおまけとしてこのソフトの活用例としてゆかりさんで配信が出来るツールも混ぜ込んじゃいました！(そういうのってもう既製品あったりするのかな？)<br>うぅ、仕様を喋りたい(喋らして下さい)。<br><br>(仕様説明:トバシテイイヨ ゴメンネ)先ほどの説明の通りブラウザから指示を出して使うソフトなので、発話者の音声認識はブラウザ側で行います。そんなブラウザで音声認識なんて出来るの？　と最初私も思いました。しかし、去年参加したとある研究会(ﾀｲｿｳﾅﾓﾉｼﾞｬﾅｲﾖ)でWeb Speech APIなるものの存在に気づいてしまいました。おお！これは使えるぞ！！と思って作ったら音声認識サービスが作れちゃいました。んで、そこからlocalhost経由で結果を.Net Winforms C#で用意した中継ポイント(APIエンドポイント)に送信して、んでそれかr(ぺちっ)<br><br>だめですよ、こんなに長ったらしく書いちゃ、。はい、では長ったらしい説明はやめにして<b>以下ソフト紹介</b>です！<br>
- <br><br>
-          ・Webからローカルの音声合成ソフトに発話させられる+大体リアルタイムに実況配信が音声合成ソフトの声でできちゃうAPIエンドポイント提供ソフト "代読くん(だいどくくん)"
-          <br>
-          ・頒布価格: 無料
-          <br>
-          ・公開開始日:未定(何の問題もなければ早めに出したいところ！)
-          <br>
-          ・ソースコード: 公開予定(オープンソース) ,C#
-          <br>
-          ・配布プラットフォーム:YOKOSTA,GitHub
-          <br>
-・特記事項: 訳あってx64版しか作れませんでした。32bit機を使ってる人なんてそもそもあんまりいないとは思いますが、64bitなCPUで使ってくださいね！(私はそういう人なのでAnyCPUが好き。)  製作者は"横茶横葉のサイト利用規約"にある通り責任負いかねます　
-<br><br><br>
-色々apiだのエンドポイントだの書いてありますが、このソフト、普通に配信者の実況にも使えるようにしてあります。(使えるかな、、多分。)詳しい事を知らなくてもソフト開いてVCT(VoiceConTool)ボタンポチッと押していただければ実況に使えるWebアプリにアクセスできます。(使うときは"各種音声合成ソフトの利用規約"を遵守してね！)
-<br><br>
-          <br>完成・公開までしばらくお待ち下さい!!
-</p>
-       
-</div>
-        <p><small>2026/05/06</small></p>
-      </div> 
-<h3>おまけ リンクたくさん(どれ押しても同じです)</h3>
-<p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
-<p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
-<p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
-<p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
-<p><a href="https://github.com/yokonoha/daidoku_kun" target="_blank">https://github.com/yokonoha/daidoku_kun</a></p>
-</div>
-<p><small>2026/05/13</small></p>
+     
 </article>
 </section>
 <aside class="sidebar">
