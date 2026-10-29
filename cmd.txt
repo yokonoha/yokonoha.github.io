@@ -6,3 +6,5 @@ sudo apt install fcitx5-mozc fcitx5-config-qt fcitx5-frontend-gtk2 fcitx5-fronte
 sudo apt install im-config
 im-config -n fcitx5
 
+
+winget install ibis chrome Git.Git localsend VideoLAN.VLC quickshare vscode ffmpeg
