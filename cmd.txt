@@ -7,4 +7,4 @@ sudo apt install im-config
 im-config -n fcitx5
 
 
-winget install ibis chrome Git.Git localsend VideoLAN.VLC quickshare vscode ffmpeg
+winget install ibis chrome Git.Git localsend VideoLAN.VLC quickshare vscode ffmpeg 7zip OBSProject.OBSStudio
