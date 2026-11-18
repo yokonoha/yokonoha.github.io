@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yokoha Inspector | ノートPCバッテリー健康度A〜F判定ツール</title>
+  <title>Yokoha Inspector | ノートPCバッテリー劣化度判定ツール Made by Y.Yokoha - 横茶横葉のサイト</title>
   <style>
    *, *::before, *::after {
       box-sizing: border-box;
@@ -73,7 +73,7 @@
       color: #0f172a;
       letter-spacing: 0.02em;
       display: inline-block;
-      border-left: 5px solid #0284c7;
+      border-left: 5px solid #02c72d;
       padding-left: 10px;
     }
 
@@ -114,7 +114,7 @@
     }
 
   .hero-section {
-      background-color: #e0f2fe;
+      background-color: #d0e0b2;
       border-bottom: 2px solid #bae6fd;
       padding: 48px 0 56px;
     }
@@ -134,13 +134,11 @@
 
     .hero-tag {
       display: inline-block;
-      background-color: #ffffff;
-      color: #0369a1;
-      border: 1px solid #7dd3fc;
+      color: #0f73c5;
+      border-left: solid #02c72d;
       font-size: 0.85rem;
       font-weight: 700;
       padding: 4px 12px;
-      border-radius: 4px;
       margin-bottom: 14px;
     }
 
@@ -159,8 +157,8 @@
     }
 
     .hero-title span {
-      color: #0284c7;
-      border-bottom: 3px solid #0284c7;
+      color: #228b39;
+      border-bottom: 3px solid #228b39;
     }
 
     .hero-lead {
@@ -181,9 +179,8 @@
     .target-list li {
       background-color: #ffffff;
       border: 1px solid #bae6fd;
-      border-left: 4px solid #0284c7;
+      border-left: 4px solid #02c72d;
       padding: 8px 12px;
-      border-radius: 4px;
       font-size: 0.92rem;
       font-weight: 700;
       color: #1e293b;
@@ -198,18 +195,16 @@
 
     .btn-primary {
       display: inline-block;
-      background-color: #0284c7;
+      background-color: #02c744;
       color: #ffffff;
       font-weight: 700;
       font-size: 1rem;
       padding: 13px 24px;
-      border-radius: 4px;
-      border: 2px solid #0369a1;
       text-align: center;
     }
 
     .btn-primary:hover {
-      background-color: #0369a1;
+      background-color: #03a10b;
       color: #ffffff;
       text-decoration: none;
     }
@@ -217,12 +212,10 @@
     .btn-secondary {
       display: inline-block;
       background-color: #ffffff;
-      color: #0369a1;
+      color: #03a14a;
       font-weight: 700;
       font-size: 0.95rem;
       padding: 13px 20px;
-      border-radius: 4px;
-      border: 2px solid #7dd3fc;
       text-align: center;
     }
 
@@ -320,9 +313,8 @@
     }
 
     .spec-card {
-      background-color: #f8fafc;
-      border: 1px solid #dac655;
-      border-radius: 4px;
+      background-color: #ebffea;
+
       padding: 20px;
     }
 
@@ -343,8 +335,7 @@
       margin-top: 12px;
       padding: 10px 12px;
       background-color: #fefce8;
-      border: 1px solid #fde047;
-      border-radius: 4px;
+
       font-size: 0.84rem;
       color: #713f12;
     }
@@ -425,9 +416,7 @@
 
 
     .inaccurate-box {
-      background-color: #fffbeb;
-      border: 2px solid #f59e0b;
-      border-radius: 5px;
+      background-color: #fcf6df;
       padding: 20px 22px;
     }
 
@@ -446,7 +435,6 @@
       font-weight: 800;
       font-size: 0.9rem;
       padding: 3px 10px;
-      border-radius: 4px;
     }
 
     .inaccurate-title {
@@ -463,15 +451,13 @@
     }
 
   .mix-box {
-      background-color: #f0f9ff;
-      border: 2px solid #0284c7;
-      border-radius: 5px;
+      background-color: #e2f3e6;
       padding: 24px 26px;
     }
 
     .mix-tag {
       display: inline-block;
-      background-color: #0284c7;
+      background-color: #17be1f;
       color: #ffffff;
       font-size: 0.8rem;
       font-weight: 700;
@@ -511,8 +497,7 @@
 
    .download-box {
       background-color: #ffffff;
-      border: 2px solid #0284c7;
-      border-radius: 5px;
+      border: 2px solid #02c72d;
       padding: 28px 24px;
       text-align: center;
     }
@@ -586,7 +571,6 @@
   </style>
 </head>
 <body>
-<h1 style="color: red;">本ソフトウェアは現在公開準備中です。暫くお待ちください。(2026/11/18~12/31迄に公開予定です。)現在試験中です。</h1>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -605,14 +589,14 @@
   <section class="hero-section">
     <div class="container hero-grid">
 
-      <div>
-        <span class="hero-tag">Windows用 バッテリー劣化度判定ツール / インストール不要</span>
+      <div><br>
+        <span class="hero-tag" style="display: flex;align-items: center;"><img src="./yilogo.png" style="width: 20%;" alt="The Logo of Yokoha Inspector">バッテリー劣化度判定ツール</span>
         <h1 class="hero-title">
-          ノートPCのバッテリー健康度を<br />
-          <span>A〜Fランク</span>でひと目判定
+          ノートPCのバッテリー健康度が<br />
+          <span>A〜Fランク</span>でひと目でわかる!
         </h1>
         <p class="hero-lead">
-          <strong>Yokoha Inspector</strong> は、<code>powercfg.exe</code> が生成するバッテリーレポートの数値を自動で読み取り、バッテリーの劣化具合をわかりやすいレベル別（A〜F・Z）で表示する軽量ユーティリティです。
+          <strong>Yokoha Inspector</strong> は、<code>powercfg.exe</code> が生成するバッテリーレポートの数値を自動で読み取り、バッテリーの劣化具合をわかりやすいレベル別（A〜F・Z）で表示する軽量ユーティリティです。<br>劣化度はスマホのように%表示させることも可能です。
         </p>
 
         <ul class="target-list">
@@ -621,10 +605,10 @@
         </ul>
 
         <div class="hero-actions">
-          <a href="#download" class="btn-primary">無料ダウンロード（exe単体）</a>
+          <a href="#download" class="btn-primary">無償ダウンロード</a>
           <a href="#levels" class="btn-secondary">判定レベルの基準を見る</a>
         </div>
-        <p class="hero-env-note">対応OS：Windows 10 / Windows 11（USBメモリからの直接起動も可能）<br>(そしてごめんなさい、64bit版のみです...)</p>
+        <p class="hero-env-note">対応OS：Windows 10 / Windows 11（USBメモリからの直接起動も可能）<br>(そして、、、ごめんなさい、64bit版のみです...) <a href="#complain"><small>ちょっと困るよという方へ</small></a></p>
       </div>
 
 
@@ -671,9 +655,6 @@
           <p>
             PCへのインストール作業は不要で、実行ファイル（<code>.exe</code>）単体ですぐに起動できます。USBメモリに入れて持ち運べるため、複数台の中古PCやジャンクPCを連続で検品する現場でも手間がかかりません。
           </p>
-          <div class="runtime-note">
-            <strong>★Tips!★ </strong><br>実行環境によっては、稀にランタイムをインストールするウィザードが表示されることがありますが、画面の指示に従い、セットアップするとそのままご利用いただけます。
-          </div>
         </div>
 
         <div class="spec-card">
@@ -682,8 +663,11 @@
             「最近電池の減りが早いので買い替えたい」という方の判断材料としてはもちろん、個人でジャンクPCの再生・検品を行う方のコンディションチェックにも活用できます。
           </p>
         </div>
-      </div>
+      </div>              <div class="runtime-note">
+            <strong>★Tips!★ </strong><br>実行環境によっては、稀にランタイムをインストールするウィザードが表示されることがありますが、画面の指示に従い、セットアップするとそのままご利用いただけます。
+          </div>
     </div>
+
   </section>
 
 
@@ -815,7 +799,7 @@
           <h3 class="inaccurate-title">各レベル表示に「(不正確)」と併記される場合について</h3>
         </div>
         <p>
-          設計容量値（Design Capacity）を満充電容量値（Full Charge Capacity）が上回っている場合（計算上のパーセンテージが100%を上回る場合）など<strong>明らかにおかしい数値結果になっているとソフトが自動判断した際</strong>に、健康度レベルの横に <code>(不正確)</code> と表示されます。互換バッテリー装着機やバッテリー校正にずれが見られる端末で見られる現象です。
+          設計容量値（Design Capacity）を満充電容量値（Full Charge Capacity）が上回っている場合（計算上のパーセンテージが100%を上回る場合）など<strong>明らかにおかしい数値結果になっているとソフトが自動判断した際</strong>に、健康度レベルの横に <code>(不正確)</code> と表示されます。バッテリー異常やバッテリー校正にずれが見られる端末で発生する現象です。
         </p>
       </div>
     </div>
@@ -831,34 +815,17 @@
 
       <div class="mix-box">
         <span class="mix-tag">公開準備中</span>
-        <h3 class="mix-title">キャラクター「須摩 ほかり（すま ほかり）」とのMix企画バージョンを準備中！</h3>
+        <h3 class="mix-title">キャラクター「須摩 ほかり」とのMix企画バージョンを準備中！</h3>
         <p class="mix-desc">
-          現在、キャラクター<strong>「須摩 ほかり（すま ほかり）」</strong>とのMix企画として、キャラクター付きバージョンの「Yokoha Inspector」を公開準備中です。通常版のシンプルで実用的な機能はそのままに、キャラクターとともにバッテリーチェックを行える特別版として鋭意制作を進めています。
+          現在、キャラクター<strong>「須摩 ほかり（すま ほかり）」</strong>とのMix企画として、キャラクター付きバージョンの「Hokari Inspector」を準備中です。<br>通常版の機能はそのままに、キャラクター付きの画面でバッテリーチェックを行える特別版として制作を進めています。
         </p>
-        <div class="mix-meta">
-          <div class="mix-meta-item">キャラクター：須摩 ほかり（すま ほかり）</div>
-          <div class="mix-meta-item">イラスト：ららられれ(@Rarararere1)</div>
-        </div>
+
       </div>
     </div>
   </section>
 
 
-  <section id="download" class="section section-gray">
-    <div class="container">
-      <div class="download-box">
-        <h3>Yokoha Inspectorのダウンロード (オープンソースです!)</h3>
-        <p>インストール不要ですぐに使えるスタンドアロン版（exe単体）です。</p>
-        <div class="download-specs">
-          動作環境：Windows 10 / Windows 11（64bit推奨） ｜ 形式：.exe 単体（インストール不要）
-        </div>
-        <div>
-          <a href="#download" class="btn-primary">Yokoha Inspector をダウンロードする</a>
-        </div>
-        <p class="hero-env-note">※ ダウンロードおよび実行の前に、下記の「ご利用上の注意事項・免責事項」を必ずお読みください。</p>
-      </div>
-    </div>
-  </section>
+
 
 
   <section id="notes" class="section section-white">
@@ -881,16 +848,64 @@
           <li>
             <strong>利用規約および免責事項（自己責任でのご利用）</strong>
             本ソフトウェアは製作者の規約に従い、すべて利用者の自己責任において利用するものとします。本ソフトウェアの使用、または使用できなかったことによって生じたいかなる損害・データ損失・不具合等についても、開発者は一切の責任を負いません。
+          <br>また、本ソフトウェアをダウンロードもしくはご利用になられた時点で<a href="https://yokonoha.github.io/readme">開発者の利用規約</a>に同意したものとみなします。利用規約はソフトウェアのInfoボタン(iのマーク)からもご覧いただけます。
+          </li>
+          <li>
+            <strong>本ソフトは無償のツールです</strong>
+            本ソフトは無償の状態でのみ提供されるサポート無し(無保証)のフリーソフトです。よって開発者はいかなる場合においても本ソフトを有償で提供することはございません。必ず正規のサイト(yokonoha.github.io)から入手いたしますようお願いいたします(但し、本ソフト開発者より承認された派生版[Mix企画版 等]を除きます)。
+          </li>
+          <li>
+            <strong>本ソフトは自己署名式です</strong>
+            本ソフトは開発者の署名にて配布を行っているため、スマートアプリコントロールやユーザーアカウント制御が実行をブロックする場合があります。<br>その場合は本ソフトを許可していただきますようお願いいたします。お手数をおかけし、申し訳ございません。
           </li>
         </ol>
       </div>
     </div>
   </section>
 
+  <section id="download" class="section section-gray">
+    <div class="container">
+      <div class="download-box">
+        <h3>Yokoha Inspectorのダウンロード (OSS)</h3>
+        <p>インストーラーではないため、インストールは不要です。</p>
+        <div class="download-specs">
+          動作環境：Windows 10 / Windows 11（64bit） ｜ 形式：*.exe（インストールは不要です。）
+        </div>
+        <div>
+          <a href="https://github.com/yokonoha/Yokoha-Inspector/releases/download/first/YKHinspector.exe" class="btn-primary">Yokoha Inspector をダウンロード</a>
+          
+        </div><small>最新バージョン: Rev.1.0</small>
+        <p class="hero-env-note">※ ダウンロードおよび実行の前に、上記の「ご利用上の注意事項・免責事項」を必ずお読みください。</p>
+              <div>
+          <a href="https://www.virustotal.com/gui/file/1265dc2b38e87aa6a19e7cd3f09f2806fecd77f38c48aad3dc010b718389f444/detection" class="btn-secondary">ウイルスチェック結果 (確認&amp;合格済)</a>
+        </div>
+        <div>
+          <a href="https://github.com/yokonoha/Yokoha-Inspector" class="btn-secondary">ソースコードを閲覧する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="complain" class="section section-gray">
+    <div class="container">
+            <div class="section-header">
+        <span class="section-label">32BIT VERSION</span>
+        <h2 class="section-title">32bit環境での利用について</h2>
+      </div>
+            <div class="notes-card">
+        <ol class="notes-list">
+          <p>32bitプロセッサを搭載したPCの減少、最新OSでの非対応化、開発時の動作確認環境(本ソフトは8台のPCにて動作確認を行いました)に関して32bit環境が用意できない点を鑑み、本ソフトでは32bit版の公開を行っておりません。</p>
+          <p>本ソフトは64bitCPU向けにビルドしたもののみ正式に公開していますが、オープンソースとしてソースコードをすべて公開しているため、ご自身で32bit版をビルド(作成)することも可能です。</p>
+          <p>その場合はプロジェクト設定にて<code>x64</code>となっている設定を<code>x86_64</code>や<code>AnyCPU</code>と修正して発行すると32bit環境でも動作するバージョンを作成できます。</p>
+          </ol>
+          </div>
+    </div>
+  </section>
+  
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-title">Yokoha Inspector</div>
-      <div>&copy; Yokoha Inspector Project. All rights reserved.</div>
+      <div class="footer-title">Yokoha Inspector<br> ー Made by Y.Yokoha</div>
+      <div>&copy; 2026 横茶横葉(Y.Yokoha) All rights reserved.</div>
     </div>
   </footer>
 
