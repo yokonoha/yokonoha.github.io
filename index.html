@@ -177,12 +177,140 @@ body.daytime-theme {
 
   <main class="container">
     <section class="main">
+      <div class="W">
+         <div class="containerz">
+    <div class="subtitle"></div>
+
+    <div class="countdown">
+      <div class="unit">
+        <div class="number" id="days">000</div>
+        <div class="label">日</div>
+      </div>
+
+      <div class="unit">
+        <div class="number" id="hours">00</div>
+        <div class="label">時間</div>
+      </div>
+
+      <div class="unit">
+        <div class="number" id="minutes">00</div>
+        <div class="label">分</div>
+      </div>
+
+      <div class="unit">
+        <div class="number" id="seconds">00</div>
+        <div class="label">秒</div>
+      </div>
+    </div>
+
+    <div id="message"></div>
+  </div>
+  <style>
+
+    .containerz {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #3c5db8f6;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 48px);
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #b8c8e8;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .unit {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 2px;
+      padding: 20px 15px;
+      min-width: 100px;
+      backdrop-filter: blur(10px);
+    }
+
+    .number {
+      font-size: clamp(35px, 7vw, 60px);
+      font-weight: bold;
+      color: #ffc21c;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .label {
+      font-size: 15px;
+      color: #d0dcf5;
+      margin-top: 8px;
+    }
+
+    #message {
+      margin-top: 35px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+
+    const target = new Date("2027-01-01T00:00:00+09:00").getTime();//JTC!
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById("days").textContent = "000";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        document.getElementById("message").textContent =
+          "新年あけましておめでとうございます! そして、2027年まで「横茶横葉のサイト」を支えてくださいまして誠にありがとうございました!  あなたにとって最高の一年となりますように。";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent =
+        String(days).padStart(3, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+      </div>
       <div class="F" id="cntd" style="z-index: 1000;">
         <a href="./index.html" class="hd" id="hd3">ボタンが見切れてしまう場合はここをクリック</a>
         <p>パスワードを貰った方はコチラへ↓</p>
         <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">Contents</span> Delivery <br><span
             style="color:white;"><small>ファイルロッカー検索</small></span></h2>
         <p>横茶横葉からファイル/URLへのパスワードを受け取った方はこちらへ入力すると、預かっているファイル/URLを探してきてくれます。</p>
+        <p style="color: red;">「Contents Delivery」サービスは2026/12/31を持ちまして終了致します。</p>
         <div style="display: flex;">
           <input type="password" id="delibox" placeholder="パスワードを入力..."
             style="flex: 1;padding: 8px;border: 1px solid #ccc;border-radius: 6px;background: #fff;color: #111;font-size: 0.95rem;">
@@ -204,7 +332,7 @@ body.daytime-theme {
 
 
 
-
+<!--
 <script>
   const iframe = document.getElementById("frm");
 
@@ -231,8 +359,18 @@ iframe2.onload = () => {
 };
 
 </script>
-  
+  -->
       <h2>Latest News!</h2>
+            <div class="F">
+        <h2>[NEW ARRIVAL] 最終の新規ソフトウェアを公開しました (続報)</h2>
+        <img src="./hkrscrst.png" alt="Hokari Inspector" style="width: 50%;">
+        <p>初心者でもノートPCのバッテリーの健康度を簡単に確認できるPCバッテリー診断ツール「Yokoha Inspector」の派生ソフト「Hokari Inspector [3DCGArts Edition]」11/25より公開中です。<br>
+        <br>本ソフトはサイト「ららられれのお部屋」のキャラクター、「須摩ほかり」とのMix企画です。<br>
+          但し、2027年より活動を順次終了する関係上、サポートは行われません。<br>
+        詳しくはソフトウェア特設サイトをご覧ください!
+        </p>
+        <a href="https://yokonoha.github.io/yokohainspector.html#mix-project" style="color: #12f32a;">[Mixセクション] Yokoha Inspector ソフトウェア特設サイト</a>
+      </div>
       <div class="F">
         <h2>[NEW ARRIVAL] 最終の新規ソフトウェアを公開しました</h2>
         <img src="./screenshot.png" alt="Yokoha Inspector" style="width: 50%;">
@@ -242,10 +380,7 @@ iframe2.onload = () => {
         </p>
         <a href="./yokohainspector.html" style="color: #12f32a;">Yokoha Inspector ソフトウェア特設サイト</a>
       </div>
-<div class="G">
-<h2>管理人による年末の挨拶と謝辞</h2>
-<iframe src="https://yokonoha.github.io/blog/12.html" style="width:100%;height:35vh;"></iframe>
-</div>
+
           <div class="T">
 <h2>[<span style="color: teal;">固定</span> 重要なお知らせ] OSS公開一部終了のお知らせ</h2>
 <p>2027年より各種成果物管理を縮小する関係上、誠に申し訳ございませんが、当サイト製作のオープンソースソフトウェアおよびそのソースコードの公開を順次終了させていただきます。
@@ -285,13 +420,6 @@ iframe2.onload = () => {
 <p>PWAをお使いの方は二回目の起動時に自動で更新されます。<br>さらに新機能が追加されたMinatsukiToneをぜひご利用ください!</p>
 <small>2026/09/06</small>
 </div>
-      <div class="F">
-        <h2>サイトシステム改良</h2>
-        <p>当サイトメインページへアクセスする際にURL末尾に"?cdusr=1"というクエリパラメータを追加すると、Contents Deliveryにのみアクセスできるようになりました!</p>
-        <p>ファイルロッカーサービスのみ使いたいという方向けです。</p>
-        <a href="https://yokonoha.github.io?cdusr=1">https://yokonoha.github.io?cdusr=1</a>
-        <p><small>2025/12/26</small></p>
-      </div>
 
     <h2>管理している他の外部サイト</h2>
       <p style="margin-top: -40px;">横茶横葉のサイト管理人が製作・保守しているサイトに関する詳細は以下の記事ページにてご確認いただけます。</p>
@@ -311,7 +439,7 @@ iframe2.onload = () => {
 
       <div class="sidebar-box">
         <h3>サイトシステムバージョン</h3>
-        <button onclick="admindiv()" style="background-color: white;">Rev.17.1 (Last Modified:2026/08/15)</button>
+        <button onclick="admindiv()" style="background-color: white;">Rev.18.0 (Last Modified:2026/11/25)</button>
         <div class="F" id="hd" style="display:none;">
           <h3>管理者向け操作画面</h3>
           <input type="text" id="searchQuery" placeholder="Type an AdminPass">
